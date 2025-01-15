@@ -14,7 +14,7 @@ export default function RootLayout({
                     <div className="flex gap-5">
                         <div>
                             <Image src={"/auth/logo-burnout.svg"} width={160} height={37} className="absolute top-[20px]" alt='Logo Empresa' />
-                            <Image src={"/auth/auth-foto.png"} width={400} height={620} className='max-h-[620px] rounded-[4px] inner drop' alt='Logo Empresa' />
+                            <Image src={"/auth/auth-foto.png"} width={400} quality={100} height={620} className='max-h-[590px] rounded-[4px] inner drop' alt='Logo Empresa' />
                         </div>
                         <div className='hidden  xl:flex flex-col max-w-[360px] break-words hyphens-auto '>
                             <h1 className='text-title text-secundaryTitle font-alex text-nowrap '>Faça seu Estilo</h1>
