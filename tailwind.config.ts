@@ -23,13 +23,15 @@ export default {
       },
       fontSize: {
         title: ["64px", "78.8px",],
-        subtitle: ["16px", "28.8px"],
+        subtitle: ["16px", "19.2px"],
         label: ["24px", "28.8px"],
         linkForm: ["14px", "16.8px"],
         buttonForm: ["18px", "21.5px"],
         placeholder: ["16px", "19.2px"]
       },
+
     },
+
   },
   plugins: [],
 } satisfies Config;
