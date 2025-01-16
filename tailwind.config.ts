@@ -22,7 +22,8 @@ export default {
         alex: ['var(--font-alex)', 'cursive'],
       },
       fontSize: {
-        title: ["64px", "78.8px",],
+        title: ["64px", "78.8px"],
+        titleMobile: ["42px", "51.2px"],
         subtitle: ["16px", "19.2px"],
         label: ["24px", "28.8px"],
         linkForm: ["14px", "16.8px"],

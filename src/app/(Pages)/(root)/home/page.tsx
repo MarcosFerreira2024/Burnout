@@ -1,10 +1,11 @@
 import React from 'react'
 import Carousel from '../../../components/Carousel'
+import { MainCarousel } from '../../../data/CarouselData'
 
 function page() {
   return (
     <div >
-        <Carousel />
+        <Carousel dados={MainCarousel} />
     </div>
   )
 }

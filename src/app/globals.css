@@ -33,3 +33,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .drop{
   box-shadow:  2px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
+
+.textShadow {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0,1);
+
+}
