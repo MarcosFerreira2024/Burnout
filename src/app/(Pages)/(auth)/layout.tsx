@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
         <main className="bg">
-            <div className="flex h-[100vh] w-[100vw]   mx-auto relative max-w-[1440px] ">
+            <div className="flex min-h-[100vh] w-[100vw]   mx-auto relative max-w-[1440px] ">
 
                 <div className='flex-1 pt-[120px] hidden lg:md:flex xl:items-start items-center flex-col    bg-mainBg   '>
 
@@ -20,7 +20,7 @@ export default function RootLayout({
                             <h1 className='text-title text-secundaryTitle font-alex text-nowrap '>Faça seu Estilo</h1>
                             <p className='text-subtitle mb-2 text-secundaryTitle font-poppins '>Fundada em 2025, a Burnout é uma marca dinâmica dedicada a redefinir a moda feminina.</p>
                             <span className='w-[full] h-[2px] mb-2 bg-secundaryBg'></span>
-                            <p className='text-subtitle text-secundaryTitle'>Nossa coleção foi cuidadosamente projetada para combinar estilo contemporâneo com conforto excepcional, 
+                            <p className='text-subtitle text-secundaryTitle font-poppins'>Nossa coleção foi cuidadosamente projetada para combinar estilo contemporâneo com conforto excepcional, 
                                 garantindo que cada peça não apenas melhore o seu guarda-roupa, 
                                 mas também eleve sua experiência no dia a dia.</p>
                         </div>
