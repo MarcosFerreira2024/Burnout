@@ -25,12 +25,11 @@ function Carousel({dados}:{dados:CarouselData[]}) {
     
       
   } 
-  console.log(dados)
 
   return (
-    <div className='w-[100%]  pr-5 pl-5'>
-      <div className='mx-auto  max-w-[1440px]  relative w-[100%]  flex   overflow-hidden  '>
-        <div className='absolute flex h-[100%] justify-between w-[calc(100%)] items-center  z-50   '>
+    <div className='w-[100%] pt-20 sm:pt-5  pr-5 pl-5 max-h-[700px]'>
+      <div className='mx-auto  max-w-[1440px]  relative     overflow-hidden  '>
+        <div className='absolute flex h-[100%] justify-between  w-[100%] items-center  z-50   '>
               <ChevronLeft onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer sm:max-w-[48px] max-w-[24px]'/>
               
               <ChevronRight onClick={()=>handleSlide(+1)} width={48} height={48} color={`#FFF4F4`} data-id={+1} className='cursor-pointer sm:max-w-[48px] max-w-[24px]'/>
