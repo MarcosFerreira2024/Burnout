@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Alex_Brush } from "next/font/google";
 import "./globals.css";
+import { LoginContextProvider } from "./Contexts/LoginContext";
 
 const poppins = Poppins({ 
   variable: "--font-poppins",
@@ -27,11 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${alex.variable} bg-secundaryBg    antialiased`}
-      >
-        {children}
-      </body>
+      <LoginContextProvider>
+        <body
+          className={`${poppins.variable} ${alex.variable} bg-secundaryBg    antialiased`}
+        >
+          {children}
+        </body>
+      </LoginContextProvider>
     </html>
   );
 }
