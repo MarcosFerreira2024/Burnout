@@ -9,7 +9,10 @@ const ACTIONS = {
     sign: {
         url: `${HOST}sign`,
 
-    }
+    },
+    code: {
+        url: `${HOST}code`,
+    },
 }
 
 export default ACTIONS
