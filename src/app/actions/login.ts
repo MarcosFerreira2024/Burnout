@@ -19,6 +19,9 @@ export default async function login(state: { ok: boolean, error: string, data: s
             body: JSON.stringify({ email, password })
         })
         const json = await res.json()
+        if (res.status !== 200) {
+            throw new Error(json.message)
+        }
         if (json.token) {
             const cookieStore = await cookies()
             cookieStore.set("token", json.token, {
@@ -29,11 +32,15 @@ export default async function login(state: { ok: boolean, error: string, data: s
             })
 
 
-            return { data: null, ok: true, error: "" }
+            return { data: null, ok: true, error: "", }
         }
-        throw new Error("Email ou senha incorretos")
+
 
     } catch (e) {
-        return ErrorMessage(e)
+        if (e instanceof Error && e.message.includes("Código necessário")) {
+
+            return { ok: false, error: "Verifique Seu Email", data: null };
+        }
+        return { ...state, error: ErrorMessage(e) }
     }
 }
