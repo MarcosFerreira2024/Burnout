@@ -15,9 +15,9 @@ export default function RootLayout({
               <NavBarMobile/>
 
             </div>
-            <div className=" flex-1 pt-20 sm:pt-0" >
-                {children}
-            </div>
+            <>
+                  {children}
+            </>
         </main>
   );
 }
