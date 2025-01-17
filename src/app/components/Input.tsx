@@ -21,12 +21,12 @@ function Input({ref,inputPassword,type,error,id,label,placeholder,name,...props}
     <div className='flex gap-1 flex-col relative ' >
       <Message error={error}  />
       <div className='flex self-start items-center gap-2 '>
-        <label className='text-label text-mainTitle font-poppins' htmlFor={id}>{label}</label>
+        <label className='text-labelMobile md:text-label text-mainTitle font-poppins' htmlFor={id}>{label}</label>
         {inputPassword?(showPassword?<EyeOffIcon  strokeWidth={1} className='cursor-pointer' onClick={() => setShowPassword(false)} width={24} color='#B91C1C'/> :<EyeIcon strokeWidth={1}  className='cursor-pointer' onClick={() => setShowPassword(true)} width={24} color='#B91C1C'/>):null}
         
         
       </div>
-      <input ref={ref} {...props} className=' placeholder:text-placeholder transition-all  focus:outline-red-600 focus:bg-secundarySubtitle focus:text-mainTitle focus:placeholder:text-mainTitle hover:bg-secundarySubtitle hover:placeholder:text-mainTitle text-secundaryTitle hover:text-mainTitle duration-300 ease-in-out inner drop min-w-[100%] max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins   placeholder:text-secundarySubtitle bg-mainBg rounded-md  ' type={`${inputPassword?(showPassword?"text":type):type}`} id={id} name={name} placeholder={placeholder} required />
+      <input ref={ref} {...props} className='placeholder:text-placeholderMobile placeholder:md:text-placeholder transition-all  focus:outline-red-600 focus:bg-secundarySubtitle focus:text-mainTitle focus:placeholder:text-mainTitle hover:bg-secundarySubtitle hover:placeholder:text-mainTitle text-secundaryTitle hover:text-mainTitle duration-300 ease-in-out inner drop min-w-[100%] max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins   placeholder:text-secundarySubtitle bg-mainBg rounded-md  ' type={`${inputPassword?(showPassword?"text":type):type}`} id={id} name={name} placeholder={placeholder} required />
     </div>
   )
 }
