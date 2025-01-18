@@ -37,10 +37,10 @@ function NavBar() {
             </div>    
             
         </aside> 
-        <main className='px-5 fixed   min-h-[calc(100vh)] bg-mainBg  z-[999] inner drop   '>
+        <main className='px-5 fixed    min-h-[calc(100vh)] bg-mainBg  z-[999] inner drop   '>
                         
                     
-            <nav className='flex  flex-col min-h-[calc(100vh-20px)] relative items-start xl:items-center  pt-5'>
+            <nav className='flex  flex-col min-h-[calc(100vh-20px)]  items-start xl:items-center  pt-5'>
                 <div className={`flex flex-col items-start gap-5   `}>
                     {modal?<Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className={`min-h-[37px] min-w-[37px]`} alt='Logo Burnout' />:
                         <div>
@@ -51,9 +51,7 @@ function NavBar() {
                         <NavButton onClick={item.label==="Pesquisa"?handleClick:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.src} key={i}/>
                     ))}
         
-                <div className={`flex flex-col items-start  absolute bottom-5  `}>
-                    <NavButton perfil={false} alt='Sair' href='/' label='Sair' src='/ui/sair.svg' />
-                </div >
+                    <NavButton classes='absolute  bottom-[-452px]  ' perfil={false} alt='Sair' href='/' label='Sair' src='/ui/sair.svg' />
                 </div >
     
             </nav>

@@ -10,10 +10,11 @@ interface NavButton{
     alt:string,
     perfil:boolean,
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
+    classes?:string,
     href:string | boolean,
     props?:ComponentPropsWithRef<"button">,
 }
-function NavButton({onClick,label,href,src="/ui/perfil.svg",alt,perfil,...props}:NavButton) {
+function NavButton({onClick,label,href,src="/ui/perfil.svg",alt,perfil,classes, ...props}:NavButton) {
   const buttonRef = useRef(null)
   const timeOutRefAddClass = useRef(null)
 
@@ -44,13 +45,13 @@ function NavButton({onClick,label,href,src="/ui/perfil.svg",alt,perfil,...props}
     if(href && typeof href === "string"){
       
       return(
-        <Link {...props} href={href} ref={buttonRef} className={`flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%] font-poppins py-1 min-h-[32px] max-h-[32px] items-center bg-mainBg inner drop rounded-md    `}>
+        <Link {...props} href={href} ref={buttonRef} className={` ${classes} flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%] font-poppins py-1 min-h-[32px] max-h-[32px] items-center bg-mainBg inner drop rounded-md    `}>
         <Image width={24} height={24} title={alt} className={`${perfil?" bg-mainBg object-cover rounded-full":""} ${modal?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
         <p className={`text-secundaryTitle text-subtitle ${modal?"hidden ":"xl:block"} hidden`}>{label}</p></Link>
       )
     }
   return (
-    <button disabled={disabled} onClick={onClick} ref={buttonRef}  {...props} className={`cursor-pointer flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%] font-poppins py-1 min-h-[32px] max-h-[32px] items-center bg-mainBg inner drop rounded-md    `} >
+    <button {...props} disabled={disabled} onClick={onClick} ref={buttonRef}   className={` ${classes} cursor-pointer flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%] font-poppins py-1 min-h-[32px] max-h-[32px] items-center bg-mainBg inner drop rounded-md    `} >
         <Image width={24} height={24} title={alt} className={`${perfil?"min-w-[24px] bg-mainBg object-cover rounded-full":""} ${modal?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
         <p className={`text-secundaryTitle text-subtitle ${modal?"hidden ":"xl:block"} hidden`}>{label}</p>
     </button>
