@@ -5,7 +5,7 @@ import Message from "./Message"
 interface Input {
   type: string,
   id: string,
-  label: string,
+  label?: string,
   placeholder: string,
   name: string,
   ref?: React.RefObject<HTMLInputElement>,
@@ -21,7 +21,7 @@ function Input({ref,inputPassword,type,error,id,label,placeholder,name,...props}
     <div className='flex gap-1 flex-col relative ' >
       <Message error={error}  />
       <div className='flex self-start items-center gap-2 '>
-        <label className='text-labelMobile md:text-label text-mainTitle font-poppins' htmlFor={id}>{label}</label>
+        {label?<label className='text-labelMobile md:text-label text-mainTitle font-poppins' htmlFor={id}>{label}</label>:null}
         {inputPassword?(showPassword?<EyeOffIcon  strokeWidth={1} className='cursor-pointer' onClick={() => setShowPassword(false)} width={24} color='#B91C1C'/> :<EyeIcon strokeWidth={1}  className='cursor-pointer' onClick={() => setShowPassword(true)} width={24} color='#B91C1C'/>):null}
         
         
