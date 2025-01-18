@@ -11,7 +11,7 @@ function ItemCarousel({texto,src,alt}:Carousel) {
     <>
      <div className='min-w-[calc(100%)] relative flex items-center justify-center  '>
         <h1 className='font-alex absolute textShadow   text-titleMobile sm:text-title text-secundaryTitle  '>{texto}</h1>
-        <Image  src={src} width={1400} height={700} quality={100} className='sm:rounded-md  max-h-[700px] min-h-[100%] min-w-[100%]  object-cover object-top' alt={alt}/>
+        <Image  src={src} width={1400} height={700} quality={100} className='sm:rounded-md globalShadow  max-h-[700px] min-h-[100%] min-w-[100%]  object-cover object-top' alt={alt}/>
     </div>
     </>
   )

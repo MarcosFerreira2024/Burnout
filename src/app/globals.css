@@ -26,13 +26,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 
-.inner{
-  box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+.globalShadow{
+  box-shadow: inset 2px 2px 5px 0px rgb(0, 0, 0,0.10), 2px 2px 5px 0px rgb(0, 0, 0,0.10);
 }
 
-.drop{
-  box-shadow:  2px 2px 5px 0px rgba(0, 0, 0, 0.2);
-}
+
 
 .textShadow {
   text-shadow: 2px 2px 2px rgb(0, 0, 0,1);

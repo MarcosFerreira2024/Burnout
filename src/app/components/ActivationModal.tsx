@@ -39,10 +39,10 @@ function ActivationModal() {
   return (
     <div onClick={()=> setShowActivationModal(!showActivationModal)} className='min-w-[100vw]  flex justify-center items-center  h-[100vh] fixed left-0 top-0 0 z-10 bg-black/20'>
 
-        <div onClick={(e) => e.stopPropagation()} className='p-5 rounded-md flex flex-col justify-between gap-10 bg-secundaryBg inner  absolute drop'>
+        <div onClick={(e) => e.stopPropagation()} className='p-5 rounded-md flex flex-col justify-between gap-10 bg-secundaryBg globalShadow  absolute '>
                 <div>
                     <h1 className='text-titleMobile md:text-title md:text-left text-center font-alex text-mainTitle'>{name}, Seja Bem Vindo</h1>
-                    <div className='w-[full] h-[2px] bg-mainBg inner drop'></div>
+                    <div className='w-[full] h-[2px] bg-mainBg globalShadow '></div>
                 </div>
 
             <form action={action} className='flex-col gap-5 flex'>

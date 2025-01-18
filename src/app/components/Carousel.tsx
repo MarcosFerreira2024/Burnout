@@ -29,8 +29,8 @@ function Carousel({dados}:{dados:CarouselData[]}) {
   return (
     <div className='w-[100%] pt-20 sm:pt-5 pr-5 pl-5 max-h-[700px]'>
       <div className='mx-auto  max-w-[1440px]  relative    overflow-hidden  '>
-        <div className='absolute flex h-[100%] justify-between z-10 w-[100%] items-center     '>
-              <ChevronLeft onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer  sm:max-w-[48px] max-w-[24px]'/>
+        <div className='absolute flex h-[100%] justify-between z-10 w-[100%] items-center      '>
+              <ChevronLeft onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer   sm:max-w-[48px] max-w-[24px]'/>
               
               <ChevronRight onClick={()=>handleSlide(+1)} width={48} height={48} color={`#FFF4F4`} data-id={+1} className='cursor-pointer  sm:max-w-[48px] max-w-[24px]'/>
           </div>
