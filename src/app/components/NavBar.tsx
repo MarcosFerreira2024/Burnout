@@ -30,7 +30,7 @@ function NavBar() {
 
   return (
     <>
-        <aside className={`${modal?"translate-x-[72px] ": "translate-x-[-228px]"} w-[300px] min-h-[100vh] transition-all ease-in-out duration-700  border-[1px] border-mainStroke   bg-mainBg drop inner z-40    fixed`}>
+        <aside className={`${modal?"translate-x-[72px] ": "translate-x-[-228px]"} w-[300px] min-h-[100%] transition-all ease-in-out duration-700  border-[1px] border-mainStroke   bg-mainBg drop inner z-40    fixed`}>
             <div className='w-[100%] px-5 pt-5'>
                 <InputPesquisa name='search' ref={null} placeholder='Pesquisar' type='search'   />
             
