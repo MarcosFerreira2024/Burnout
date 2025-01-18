@@ -1,5 +1,6 @@
 import NavBar from "../../components/NavBar";
 import NavBarMobile from "../../components/NavBarMobile";
+import { NavContextProvider } from "../../Contexts/navBarContext";
 
 export default function RootLayout({
   children,
@@ -7,6 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <NavContextProvider>
         <main className="flex " >
             <div className="xl:w-[200px] w-[72px] sm:block hidden ">
               <NavBar/>
@@ -19,5 +21,6 @@ export default function RootLayout({
                   {children}
             </>
         </main>
+   </NavContextProvider>
   );
 }

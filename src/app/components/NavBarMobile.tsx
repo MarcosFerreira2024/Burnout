@@ -16,7 +16,7 @@ function NavBarMobile() {
                 <input type="search" className='outline-none bg-transparent w-[85%] placeholder:text-secundaryTitle text-subtitle text-secundaryTitle ' placeholder='Pesquisar' id='search'/>
             </div>
             <div>
-                <NavButton alt='perfil' label='perfil' src='/ui/perfil.png' perfil />
+                <NavButton href='/perfil' alt='perfil' label='perfil' src='/ui/perfil.png' perfil />
             </div>
         </aside>
         <main className='px-5 h-[60px] py-5 fixed bottom-0 w-[100%] bg-mainBg  inner drop  '>
