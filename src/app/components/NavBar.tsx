@@ -29,7 +29,7 @@ function NavBar() {
     }
 
   return (
-    <>
+    <nav>
         <aside className={`${modal?"translate-x-[72px] ": "translate-x-[-228px]"} w-[300px] min-h-[100%] transition-all ease-in-out duration-700  border-[1px] border-mainStroke   bg-mainBg drop inner z-40    fixed`}>
             <div className='w-[100%] px-5 pt-5'>
                 <InputPesquisa name='search' ref={null} placeholder='Pesquisar' type='search'   />
@@ -37,27 +37,30 @@ function NavBar() {
             </div>    
             
         </aside> 
-        <main className='px-5 fixed    min-h-[calc(100vh)] bg-mainBg  z-[999] inner drop   '>
+        <main className='px-5 fixed   bg-mainBg  z-[999] inner drop   '>
                         
                     
-            <nav className='flex  flex-col min-h-[calc(100vh-20px)]  items-start xl:items-center  pt-5'>
-                <div className={`flex flex-col items-start gap-5   `}>
-                    {modal?<Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className={`min-h-[37px] min-w-[37px]`} alt='Logo Burnout' />:
+                <div className={`flex flex-col items-start gap-5 justify-between min-h-[calc(100vh)] pt-5 pb-5 `}>
+                    <div>
+                        {modal?<Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className={`min-h-[37px] min-w-[37px]`} alt='Logo Burnout' />:
                         <div>
-                            <Image onClick={()=> redirect('/home')} src={`/auth/logo-burnout.svg`} width={160} height={37} className="hidden xl:block" alt='Logo Burnout' />
-                            <Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className=" xl:hidden min-h-[37px] min-w-[37px]  " alt='Logo Burnout' /> 
+                                <Image onClick={()=> redirect('/home')} src={`/auth/logo-burnout.svg`} width={160} height={37} className="hidden xl:block" alt='Logo Burnout' />
+                                <Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className=" xl:hidden min-h-[37px] min-w-[37px]  " alt='Logo Burnout' /> 
                         </div>}
-                    {NavData.map((item,i)=> (
-                        <NavButton onClick={item.label==="Pesquisa"?handleClick:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.src} key={i}/>
-                    ))}
+                        <div className='flex gap-5 pt-5 flex-col'>
+                            {NavData.map((item,i)=> (
+                                <NavButton onClick={item.label==="Pesquisa"?handleClick:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.src} key={i}/>
+                            ))}
+                        </div>
+
+                    </div>
         
-                    <NavButton classes='absolute  bottom-[-452px]  ' perfil={false} alt='Sair' href='/' label='Sair' src='/ui/sair.svg' />
+                    <NavButton  perfil={false} alt='Sair' href='/' label='Sair' src='/ui/sair.svg' />
                 </div >
     
-            </nav>
         </main>
    
-    </>
+    </nav>
   )
 }
 
