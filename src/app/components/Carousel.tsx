@@ -1,7 +1,7 @@
 "use client"
 import {  ChevronLeft, ChevronRight } from 'lucide-react'
 import React, { useEffect, useRef, useState } from 'react'
-import ItemCarousel from './ItemCarousel'
+import ItemCarousel from './CarouselItems'
 import { CarouselData } from '../Types/Interfaces/Carousel'
 
 

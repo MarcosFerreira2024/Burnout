@@ -4,7 +4,7 @@ import CarouselButton from './CarouselButton'
 import { Carousel } from '../Types/Interfaces/Carousel'
 
 
-function ItemCarousel({texto,src,alt}:Carousel) {
+function CarouselItem({texto,src="/home/not-available.png",alt}:Carousel) {
   return (
      <div id='carousel' className='min-w-[calc(100%)] flex flex-col select-none items-center justify-center relative     '>
         <Image  src={src} width={1400} height={700} quality={100} draggable={false} className='sm:rounded-md globalShadow max-h-[700px] min-h-[100%]  min-w-[100%]  object-cover object-top' alt={alt}/>
@@ -14,4 +14,4 @@ function ItemCarousel({texto,src,alt}:Carousel) {
   )
 }
 
-export default ItemCarousel
+export default CarouselItem
