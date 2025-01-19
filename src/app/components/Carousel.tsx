@@ -10,7 +10,7 @@ import { CarouselData } from '../Types/Interfaces/Carousel'
 function Carousel({dados}:{dados:CarouselData[]}) {
   const refTimeout = useRef(null)
 
-  const interval = 4000
+  const interval = 100000000000
 
 
   const [slide,setSlide]= useState(0)
@@ -95,7 +95,7 @@ function Carousel({dados}:{dados:CarouselData[]}) {
 
 
   return (
-    <div    className='w-[100%]  pr-5 pl-5 max-h-[700px]  '>
+    <div    className='w-[100%]   max-h-[700px]  '>
       <div  className='mx-auto  max-w-[1440px]  relative    overflow-x-hidden  '>
         <div className=' flex h-[100%] justify-between absolute w-[100%] items-center     '>
               <ChevronLeft onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer  z-10  sm:max-w-[48px] max-w-[24px]'/>

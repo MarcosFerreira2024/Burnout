@@ -9,7 +9,7 @@ export default function RootLayout({
 }>) {
   return (
     <NavContextProvider>
-        <main className="flex " >
+        <main className="flex  " >
             <div className="xl:w-[200px] w-[72px] sm:block hidden ">
               <NavBar/>
             </div>
