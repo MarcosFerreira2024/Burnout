@@ -20,3 +20,28 @@ export const MainCarousel = [
 
 ]
 
+export const Estacoes = [
+    {
+        alt: "Estilo de verão",
+        texto: 'Verão',
+        redirect: "/home/style/verao"
+    },
+    {
+        alt: "Estilo de outono",
+        texto: 'Outono',
+        redirect: "/home/style/outono"
+    },
+    {
+        alt: "Estilo de inverno",
+        texto: 'Inverno',
+        redirect: "/home/style/inverno"
+    },
+    {
+        alt: "Estilo de primavera",
+        texto: 'Primavera',
+        redirect: "/home/style/primavera"
+    },
+
+
+]
+

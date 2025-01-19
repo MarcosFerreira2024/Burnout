@@ -1,8 +1,10 @@
 import React from 'react'
 import Carousel from '../../../components/Carousel'
-import { MainCarousel } from '../../../data/CarouselData'
+import { Estacoes, MainCarousel } from '../../../data/CarouselData'
 import NavCategories from '../../../components/NavCategories'
-import { HomeMainCategories } from '../../../data/Home'
+import { HomeMainCategories } from '../../../data/HomeData'
+import CardHome from '../../../components/CardHome'
+import Footer from '../../../components/Footer'
 
 function page() {
   return (
@@ -10,6 +12,12 @@ function page() {
         <Carousel dados={MainCarousel} />
 
         <NavCategories dados={HomeMainCategories} />
+
+        <CardHome />
+
+        <Carousel dados={Estacoes} />
+
+        <Footer />
 
     </div>
   )
