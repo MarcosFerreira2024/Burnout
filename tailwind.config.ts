@@ -25,6 +25,7 @@ export default {
       fontSize: {
         title: ["64px", "78.8px"],
         titleMobile: ["42px", "51.2px"],
+        footerSubtitle: ["14px", "16.8px"],
         subtitle: ["16px", "19.2px"],
         subtitleMobile: ["12px", "14px"],
         label: ["24px", "28.8px"],
