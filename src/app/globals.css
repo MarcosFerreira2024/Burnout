@@ -37,6 +37,12 @@ input[type="search"]::-webkit-search-results-decoration {
 
 }
 
+.bg-card{
+
+  background: linear-gradient(to bottom, #B91C1C 0%, #9D1E1E 100%);
+
+}
+
 
 
 
