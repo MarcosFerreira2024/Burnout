@@ -5,7 +5,7 @@ import NavCategories from '../../../components/NavCategories'
 
 function page() {
   return (
-    <div className='flex-1 grid mx-auto  '>
+    <div className='flex-1 grid mx-auto mt-20 sm:mt-0  '>
         <Carousel dados={MainCarousel} />
 
         <NavCategories />

@@ -1,17 +1,24 @@
 "use client"
 import {  ChevronLeft, ChevronRight } from 'lucide-react'
-import React, { useState } from 'react'
-import { CarouselData } from '../data/CarouselData'
+import React, { useEffect, useRef, useState } from 'react'
 import ItemCarousel from './ItemCarousel'
+import { CarouselData } from '../Types/Interfaces/Carousel'
 
 
 
 
 function Carousel({dados}:{dados:CarouselData[]}) {
+  const refTimeout = useRef(null)
+
+  const interval = 4000
+
 
   const [slide,setSlide]= useState(0)
 
+
   const handleSlide = (id:number) => {
+    if(refTimeout.current) clearTimeout(refTimeout.current)
+
     if(slide===0&&id===-1){
       setSlide(200)
       return
@@ -24,22 +31,84 @@ function Carousel({dados}:{dados:CarouselData[]}) {
     setSlide((current)=> current + id*100)
     
       
-  } 
+  }
+
+  useEffect(()=>{
+   startTimeOut()
+   return () => clearTimeout(refTimeout.current) 
+  })
+
+  const handleMouseEnter = () => {
+    pauseTimeOut()
+    return
+  }
+
+  const handleMouseLeave = () => {
+    startTimeOut()
+    return
+  }
+
+  const pauseTimeOut = () => {
+    if(refTimeout.current) clearTimeout(refTimeout.current)
+    
+    return
+  }
+
+  const startTimeOut = () => {
+    if(refTimeout.current) clearTimeout(refTimeout.current)
+      refTimeout.current = setTimeout(()=>{
+        handleSlide(+1)
+      },interval) 
+    return
+  }
+
+  let pageStart = 0
+  let pageEnd = 0
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) =>{
+    pauseTimeOut()
+
+    pageStart = e.touches[0].pageX
+
+
+    
+
+
+    return
+  }
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) =>{
+    pauseTimeOut()
+
+
+    pageEnd = e.changedTouches[0].pageX
+
+    if(pageStart < pageEnd){
+      handleSlide(-1)
+    }
+
+    if(pageStart > pageEnd){
+      handleSlide(+1)
+    }
+
+    return
+  }
+
 
   return (
-    <div className='w-[100%] pt-20 sm:pt-5 pr-5 pl-5 max-h-[700px]'>
-      <div className='mx-auto  max-w-[1440px]  relative    overflow-hidden  '>
-        <div className='absolute flex h-[100%] justify-between z-10 w-[100%] items-center      '>
-              <ChevronLeft onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer   sm:max-w-[48px] max-w-[24px]'/>
+    <div    className='w-[100%]  pr-5 pl-5 max-h-[700px]  '>
+      <div  className='mx-auto  max-w-[1440px]  relative    overflow-x-hidden  '>
+        <div className=' flex h-[100%] justify-between absolute w-[100%] items-center     '>
+              <ChevronLeft onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer  z-10  sm:max-w-[48px] max-w-[24px]'/>
               
-              <ChevronRight onClick={()=>handleSlide(+1)} width={48} height={48} color={`#FFF4F4`} data-id={+1} className='cursor-pointer  sm:max-w-[48px] max-w-[24px]'/>
-          </div>
+              <ChevronRight onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=>handleSlide(+1)} width={48} height={48} color={`#FFF4F4`} data-id={+1} className='cursor-pointer z-10  sm:max-w-[48px] max-w-[24px]'/>
+        </div>
 
-        <div style={{transform: `translateX(calc(-${slide}% ))` }} className='flex   transition-all ease-in-out duration-700   '>
+        <div  onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{transform: `translateX(calc(-${slide}% ))` }} className='flex   transition-all ease-in-out duration-700   '>
 
             {dados.map((item,i)=> (
-                <ItemCarousel key={i} texto={item.texto} src={item.src} alt={item.alt}/>
+                    <ItemCarousel key={i}  texto={item.texto} src={item.src} alt={item.alt}/>
             ))}
+
 
         </div>
 

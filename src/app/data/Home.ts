@@ -2,43 +2,43 @@ import { HomeCategories } from "../Types/Interfaces/Home";
 
 export const HomeMainCategories: HomeCategories[] = [
     {
-        ref: "/sandalias",
+        ref: "/home/sandalias",
         text: "Sandálias"
     },
     {
-        ref: "/Blusas",
+        ref: "/home/Blusas",
         text: "Blusas"
     },
     {
-        ref: "/Vestidos",
+        ref: "/home/Vestidos",
         text: "Vestidos"
     },
     {
-        ref: "/Calcas",
+        ref: "/home/Calcas",
         text: "Calças"
     },
     {
-        ref: "/Bermudas",
+        ref: "/home/Bermudas",
         text: "Bermudas"
     },
     {
-        ref: "/Calcinhas",
+        ref: "/home/Calcinhas",
         text: "Calcinhas"
     },
     {
-        ref: "/Oculos",
+        ref: "/home/Oculos",
         text: "Óculos"
     },
     {
-        ref: "/Braceletes",
+        ref: "/home/Braceletes",
         text: "Braceletes"
     },
     {
-        ref: "/Chapeus",
+        ref: "/home/Chapeus",
         text: "Chapéus"
     },
     {
-        ref: "/sutias",
+        ref: "/home/Sutias",
         text: "Sutiãs"
     }
 ]

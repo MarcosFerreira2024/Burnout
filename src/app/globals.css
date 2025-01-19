@@ -27,7 +27,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 .globalShadow{
-  box-shadow: inset 2px 2px 5px 0px rgb(0, 0, 0,0.10), 2px 2px 5px 0px rgb(0, 0, 0,0.10);
+  box-shadow: inset 2px 2px 5px 0px rgb(0, 0, 0,0.10), 2px 2px 5px 0px rgb(0, 0, 0,0.2);
 }
 
 
