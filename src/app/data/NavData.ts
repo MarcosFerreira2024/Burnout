@@ -11,7 +11,7 @@ export const NavData = [
         alt: "Ver categorias",
         perfil: false,
         label: "Categorias",
-        redirect: "/categorias",
+        redirect: false,
     },
     {
         src: "/ui/ofertas.svg",

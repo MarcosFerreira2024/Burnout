@@ -18,16 +18,16 @@ function NavButton({onClick,label,href,src="/ui/perfil.svg",alt,perfil,classes, 
   const buttonRef = useRef(null)
   const timeOutRefAddClass = useRef(null)
 
-  const {modal,mounted} = useContext(NavContext)
+  const {modais,mounted} = useContext(NavContext)
   const [disabled, setDisabled] = useState(false)
 
   useEffect(()=>{
-    if(!modal){
+    if(!modais){
       setDisabled(false)
       buttonRef.current?.classList.add("xl:max-w-[160px]")
       return
     }
-    if(modal){
+    if(modais){
       setDisabled(true)
       if(timeOutRefAddClass.current){
         clearTimeout(timeOutRefAddClass.current)
@@ -38,21 +38,21 @@ function NavButton({onClick,label,href,src="/ui/perfil.svg",alt,perfil,classes, 
         buttonRef.current?.classList.add("max-w-[32px]")
       },200)
     }
-  },[modal,])
+  },[modais])
 
 
     if(href && typeof href === "string"){
       
       return(
-        <Link {...props} href={href} ref={buttonRef} className={` ${classes} globalShadow flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal  xl:pl-2`)} w-[100%] xl:max-w-[160px] font-poppins py-1 min-h-[32px]  max-h-[32px] max-w-[32px] items-center bg-mainBg   rounded-md    `}>
-        <Image width={24} height={24} title={alt} className={`${perfil?" bg-mainBg object-cover rounded-full":""} ${modal?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
-        <p className={`text-secundaryTitle text-subtitle ${modal?"hidden ":"xl:block"} hidden`}>{label}</p></Link>
+        <Link {...props} href={href} ref={buttonRef} className={` ${classes} globalShadow flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modais ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal  xl:pl-2`)} w-[100%] xl:max-w-[160px] font-poppins py-1 min-h-[32px]  max-h-[32px] max-w-[32px] items-center bg-mainBg   rounded-md    `}>
+        <Image width={24} height={24} title={alt} className={`${perfil?" bg-mainBg object-cover rounded-full":""} ${modais?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
+        <p className={`text-secundaryTitle text-subtitle ${modais?"hidden ":"xl:block"} hidden`}>{label}</p></Link>
       )
     }
   return (
-    <button {...props} disabled={disabled} onClick={onClick} ref={buttonRef}   className={` ${classes} globalShadow cursor-pointer flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modal ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%]  xl:max-w-[160px]  font-poppins py-1 min-h-[32px] max-h-[32px] max-w-[32px] items-center bg-mainBg   rounded-md    `} >
-        <Image width={24} height={24} title={alt} className={`${perfil?"min-w-[24px] bg-mainBg object-cover rounded-full":""} ${modal?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
-        <p className={`text-secundaryTitle text-subtitle ${modal?"hidden ":"xl:block"} hidden`}>{label}</p>
+    <button {...props} disabled={disabled} onClick={onClick} ref={buttonRef}   className={` ${classes} globalShadow cursor-pointer flex outline-mainSubtitle relative  hover:opacity-90 hover:bg-mainStroke transition-opacity  ease-in-out duration-300 border-[1px] border-mainStroke gap-2    ${modais ?" animaInNavBarButtons  ":(`${mounted?"animaOutNavBarButtons":""} xl:justify-normal xl:pl-2`)} w-[100%]  xl:max-w-[160px]  font-poppins py-1 min-h-[32px] max-h-[32px] max-w-[32px] items-center bg-mainBg   rounded-md    `} >
+        <Image width={24} height={24} title={alt} className={`${perfil?"min-w-[24px] bg-mainBg object-cover rounded-full":""} ${modais?"relative left-[3px]":"relative left-[3px]  xl:left-0"}`} src={src} alt={alt}/>
+        <p className={`text-secundaryTitle text-subtitle ${modais?"hidden ":"xl:block"} hidden`}>{label}</p>
     </button>
 
   )

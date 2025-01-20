@@ -25,13 +25,17 @@ export default {
       fontSize: {
         title: ["64px", "78.8px"],
         titleMobile: ["42px", "51.2px"],
+        categories: ["20px", "24px"],
+        categoriesMobile: ["16px", "19.2px"],
         footerSubtitle: ["14px", "16.8px"],
         subtitle: ["16px", "19.2px"],
         subtitleMobile: ["12px", "14px"],
         label: ["24px", "28.8px"],
         labelMobile: ["16px", "19.2px"],
+        search: ["20px", "24px"],
+        searchMobile: ["16px", "19.2px"],
         placeholder: ["16px", "19.2px"],
-        placeholderMobile: ["12px", "14px"],
+        placeholderMobile: ["16px", "14px"],
         linkForm: ["14px", "16.8px"],
         buttonForm: ["18px", "21.5px"]
       },

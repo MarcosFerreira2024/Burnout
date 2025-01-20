@@ -7,8 +7,12 @@ type ContextProviderProps = {
 };
 
 type NavBarContext = {
-    modal: boolean;
-    setModal: React.Dispatch<React.SetStateAction<boolean>>,
+    modais: boolean,
+    setModais: React.Dispatch<React.SetStateAction<boolean>>,
+    modalPesquisa: boolean,
+    showModalPesquisa: React.Dispatch<React.SetStateAction<boolean>>,
+    modalCategories: boolean,
+    showModalCategories: React.Dispatch<React.SetStateAction<boolean>>,
     mounted: boolean,
     setMounted: React.Dispatch<React.SetStateAction<boolean>>,
     anima:boolean,
@@ -19,7 +23,11 @@ type NavBarContext = {
 export const NavContext = createContext({} as NavBarContext);
 
 export const NavContextProvider = ({ children }: ContextProviderProps) => {
-    const [modal, setModal] = useState(false);
+    const [modalPesquisa, showModalPesquisa] = useState(false);
+    const [modalCategories, showModalCategories] = useState(false);
+    const [modais,setModais] = useState(false)
+
+
     const [mounted,setMounted] = useState(false)
     const [anima,setAnima] = useState(false)
 
@@ -27,11 +35,15 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
     return (
         <NavContext.Provider
             value={{
-                modal,
-                setModal,
+                modais,
+                setModais,
+                modalPesquisa,
+                modalCategories,
                 mounted,
-                setMounted,
                 anima,
+                showModalPesquisa,
+                showModalCategories,
+                setMounted,
                 setAnima,
                 
             }}
