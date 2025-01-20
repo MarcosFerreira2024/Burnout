@@ -5,7 +5,7 @@ export interface Carousel {
 }
 
 export interface CarouselData {
-    src: string,
+    src?: string,
     alt: string,
     texto: string,
     redirect: string,
