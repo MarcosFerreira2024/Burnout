@@ -7,7 +7,7 @@ import { CarouselData } from '../Types/Interfaces/Carousel'
 
 
 
-function Carousel({dados}:{dados:CarouselData[]}) {
+function Carousel({dados,verMais}:{dados:CarouselData[],verMais?:boolean}) {
   const refTimeout = useRef(null)
 
   const interval = 100000000000
@@ -106,7 +106,7 @@ function Carousel({dados}:{dados:CarouselData[]}) {
         <div  onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{transform: `translateX(calc(-${slide}% ))` }} className='flex   transition-all ease-in-out duration-700   '>
 
             {dados.map((item,i)=> (
-                    <ItemCarousel key={i}  texto={item.texto} src={item.src} alt={item.alt}/>
+                    <ItemCarousel  verMais={verMais} key={i}  texto={item.texto} src={item.src} alt={item.alt}/>
             ))}
 
 
