@@ -17,9 +17,7 @@ export default function RootLayout({
               <NavBarMobile/>
 
             </div>
-            <>
                   {children}
-            </>
         </main>
    </NavContextProvider>
   );
