@@ -48,7 +48,7 @@ function Sign() {
         <div className='flex max-w-[400px]    text-right  justify-between'>
             
             <FormButton labelEnvio='Cadastrando...' labelPadrao='Cadastrar'  />
-            <h1 className='text-linkForm text-mainSubtitle min-w-[16ch] max-w-[21ch] font-poppins'>já possui uma conta ? <Link href={"/login"} className='underline'>Entrar</Link></h1>
+            <h1 className='text-linkText text-mainSubtitle min-w-[16ch] max-w-[21ch] font-poppins'>já possui uma conta ? <Link href={"/login"} className='underline'>Entrar</Link></h1>
         </div>
         {state.error?<Message error={state.error}/>:null}
 

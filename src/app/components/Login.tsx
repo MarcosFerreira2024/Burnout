@@ -56,7 +56,7 @@ function Login() {
         <div className='flex max-w-[400px]    text-right  justify-between'>
 
             <FormButton labelEnvio='Entrando...' labelPadrao='Entrar' />
-            <h1 className='text-linkForm text-mainSubtitle min-w-[16ch] max-w-[21ch] font-poppins'>Ainda não possui conta ? <Link href={"/sign"} className='underline'>Registre-se</Link></h1>
+            <h1 className='text-linkText text-mainSubtitle min-w-[16ch] max-w-[21ch] font-poppins'>Ainda não possui conta ? <Link href={"/signup"} className='underline'>Registre-se</Link></h1>
         </div>
         {state.error?<Message error={state.error}/>:null}
       </form>
