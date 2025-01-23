@@ -13,6 +13,15 @@ const ACTIONS = {
     code: {
         url: `${HOST}code`,
     },
+    produtos: {
+        getAll: {
+            url: `${HOST}produtos?name=`,
+        },
+        getOne: {
+            url: `${HOST}produto`,
+        }
+
+    }
 }
 
 export default ACTIONS
