@@ -7,6 +7,7 @@ import { NavContext} from '../Contexts/navBarContext'
 import { NavData } from '../data/NavData'
 import ModalCategories from './ModalCategories'
 import ModalPesquisa from './ModalPesquisa'
+import { logOut } from '../actions/logout'
 
  
 
@@ -61,6 +62,14 @@ function NavBar() {
          return
 
      }
+    const handleLogout = async () =>{
+
+        logOut()
+        localStorage.clear()
+        redirect('/login')
+
+        
+    }
 
   return (
     <nav>
@@ -86,7 +95,7 @@ function NavBar() {
 
                     </div>
         
-                    <NavButton  perfil={false} alt='Sair' href='/' label='Sair' src='/ui/sair.svg' />
+                    <NavButton onClick={handleLogout} perfil={false} alt='Sair' href={false} label='Sair' src='/ui/sair.svg' />
             </div >
     
         </main>
