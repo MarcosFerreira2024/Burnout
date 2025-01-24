@@ -6,7 +6,6 @@ export async function getAllProducts(category: string) {
     const response = await fetch(`${ACTIONS.produtos.getAll.url}${category}`)
     const json = await response.json()
 
-    console.log(json)
     return json as Product[]
 }
 
@@ -16,7 +15,6 @@ export async function getOneProduct(id: string) {
 
     const json = await response.json()
 
-    console.log(json)
 
     return json as Product
 }
