@@ -25,6 +25,10 @@ export default {
       fontSize: {
         title: ["64px", "78.8px"],
         titleMobile: ["42px", "51.2px"],
+        perfilTitle: ["24px", "28.8px"],
+        perfilTitleMobile: ["18px", "21.5px"],
+        perfilSubtitle: ["16px", "19.2px"],
+        perfilSubtitleMobile: ["12px", "14px"],
         produtosTitle: ["24px", "28.8px"],
         produtosSubtitle: ["16px", "19.2px"],
         produtoTitle: ["36px", "42.4px"],
@@ -43,7 +47,9 @@ export default {
         placeholder: ["16px", "19.2px"],
         placeholderMobile: ["16px", "14px"],
         linkText: ["14px", "16.8px"],
-        buttonForm: ["18px", "21.5px"]
+        buttonForm: ["18px", "21.5px"],
+        buttonFormMobile: ["14px", "16px"],
+
       },
 
     },
