@@ -10,6 +10,11 @@ const ACTIONS = {
         url: `${HOST}sign`,
 
     },
+    user: {
+        getOne: {
+            url: `${HOST}user`
+        }
+    },
     code: {
         url: `${HOST}code`,
     },

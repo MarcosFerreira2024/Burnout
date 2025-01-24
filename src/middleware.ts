@@ -1,11 +1,14 @@
+"use server"
 import { NextRequest, NextResponse } from "next/server";
+import { getUser } from "./app/actions/getUser";
 
-export function middleware(req: NextRequest) {
-    const token = req.cookies.get("token");
+export async function middleware(req: NextRequest) {
     const home = new URL("/home", req.url);
     const login = new URL("/login", req.url);
 
-    if (!token) {
+    const user = await getUser();
+
+    if (user instanceof Error) {
         if (["/login", "/signup"].includes(req.nextUrl.pathname)) {
             return NextResponse.next();
         }
@@ -13,7 +16,7 @@ export function middleware(req: NextRequest) {
         return NextResponse.redirect(login);
     }
 
-    if (token.value && ["/login", "/signup"].includes(req.nextUrl.pathname)) {
+    if (user && user.status === true && ["/login", "/signup"].includes(req.nextUrl.pathname)) {
         return NextResponse.redirect(home);
     }
 
@@ -24,7 +27,6 @@ export const config = {
     matcher: [
         "/login",
         "/signup",
-        "/home",
     ],
 };
 
