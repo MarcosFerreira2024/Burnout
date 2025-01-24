@@ -32,7 +32,7 @@ function SingleProductPage({id}:{id:string}) {
             }
             getProdutos(id)
     
-        },)
+        },[id])
     const segments = path.split("/").filter(Boolean)
 
     const handleCompra = () =>{
@@ -69,7 +69,7 @@ function SingleProductPage({id}:{id:string}) {
                 <Breadcrumb segments={segments}  />
 
                 <FotosProduto fav name={produtos.name} photo={produtos.photo} />
-                <div className='lg:hidden'><Carousel dados={[
+                <div className='lg:hidden '><Carousel position='object-center' altura='max-h-[750px]' dados={[
                 {
                     src: produtos.photo[0],
                     alt: produtos.name,
@@ -90,7 +90,7 @@ function SingleProductPage({id}:{id:string}) {
 
 
             </div>
-            <div className='flex text-mainBg font-poppins gap-5 mx-auto  lg:items-start items-center relative text-center lg:text-left min-h-[660px]  flex-col mt-10 lg:border-r-2 border-mainStroke'>
+            <section className='flex text-mainBg font-poppins gap-5 mx-auto  lg:items-start items-center relative text-center lg:text-left min-h-full lg:min-h-[660px]  flex-col mt-10 lg:border-r-2 border-mainStroke'>
                 <h1 className='xl:text-produtoTitle   text-produtoMobile   lg:break-words lg:min-w-[19ch]  lg:max-w-[30ch]  '>{produtos.name}</h1>
                 <div className='flex gap-5 '>
                     {produtos.size.map((size,i)=>(
@@ -118,7 +118,7 @@ function SingleProductPage({id}:{id:string}) {
                 <Button disabled={!canSelect} onClick={handleCompra} classes='w-full px-10 py-3' label='Comprar'/>
                 </div>
 
-            </div>
+            </section>
         
         
         
