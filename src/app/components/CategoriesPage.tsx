@@ -20,7 +20,7 @@ function CategoriesPage({category}:{category:string}) {
         }
         getProdutos(category)
 
-    },)
+    },[category])
     const segments = path.split("/").filter(Boolean)
 
 

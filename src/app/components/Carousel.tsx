@@ -7,7 +7,7 @@ import { CarouselData } from '../Types/Interfaces/Carousel'
 
 
 
-function Carousel({dados,verMais}:{dados:CarouselData[],verMais?:boolean}) {
+function Carousel({dados,verMais,altura,position}:{dados:CarouselData[],verMais?:boolean,altura?:string,position?:string}) {
   const refTimeout = useRef(null)
 
   const interval = 100000000000
@@ -95,7 +95,7 @@ function Carousel({dados,verMais}:{dados:CarouselData[],verMais?:boolean}) {
 
 
   return (
-    <div    className='w-[100%]   max-h-[700px]  '>
+    <div className=" w-[100%]">
       <div  className='mx-auto  max-w-[1440px]  relative    overflow-x-hidden  '>
         <div className=' flex h-[100%] justify-between absolute w-[100%] items-center     '>
               <ChevronLeft onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer  z-10  sm:max-w-[48px] max-w-[24px]'/>
@@ -106,7 +106,7 @@ function Carousel({dados,verMais}:{dados:CarouselData[],verMais?:boolean}) {
         <div  onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{transform: `translateX(calc(-${slide}% ))` }} className='flex   transition-all ease-in-out duration-700   '>
 
             {dados.map((item,i)=> (
-                    <ItemCarousel  verMais={verMais} key={i}  texto={item.texto} src={item.src} alt={item.alt}/>
+                    <ItemCarousel altura={altura} position={position}  verMais={verMais} key={i}  texto={item.texto} src={item.src} alt={item.alt}/>
             ))}
 
 

@@ -1,5 +1,7 @@
 export interface Carousel {
     texto?: string,
+    altura?: string
+    position?: string,
     src: string,
     alt: string,
     verMais: boolean
