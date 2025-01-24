@@ -11,7 +11,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 :root {
   --secundary-title:#FFFFFF;  
-  --secundary-subtitle:#FFF4F4;
+  --secundary-subtitle:#f0f0f0;
   --secundary-bg:#FFF4F4;
   --main-bg:#B91C1C; 
   --main-subtitle:#B91C1C; 

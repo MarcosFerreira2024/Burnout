@@ -30,7 +30,7 @@ function CategoriesPage({category}:{category:string}) {
     <>
         {produtos?<section className=' max-w-[1440px]  mx-auto  w-full flex flex-col'>
             <header>
-                <nav className='flex flex-col w-full font-poppins text-linkText text-mainBg'>
+                <nav className='flex flex-col w-full font-poppins text-linkText text-mainTitle'>
                     <Breadcrumb segments={segments}/>
 
                     <div className='mt-[10px]   '>

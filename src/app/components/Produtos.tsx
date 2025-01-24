@@ -21,7 +21,7 @@ function Produtos({id,fav,photo,category,name,price,}:ComponenteProduto) {
         </div>
         <div className='flex flex-col mt-2 text-center'>
             <h2 className='text-produtosSubtitle text-mainSubtitle min-h-[60px] '>{name}</h2>
-            <h1 className='text-produtosTitle text-mainBg mb-2'>{price}</h1>
+            <h1 className='text-produtosTitle text-mainTitle mb-2'>{price}</h1>
             <span className='text-produtosSubtitle text-mainSubtitle mb-5'>7x de R${parcelas}</span>
         </div>
 

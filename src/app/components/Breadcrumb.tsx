@@ -9,7 +9,7 @@ function Breadcrumb({segments}:{segments:string[]}) {
                 const path = `/${segments.slice(0, index + 1).join('/')}`;
                 return (
                     <li key={index}>
-                        <Link  href={path} className='flex focus:outline-red-600 text-mainBg'  >
+                        <Link  href={path} className='flex focus:outline-red-600 text-mainTitle'  >
                             <p className='hover:underline hover:opacity-90   '>{segment.charAt(0).toUpperCase() + segment.slice(1)}</p>
                             <span>/</span>
                         </Link>

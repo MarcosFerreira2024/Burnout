@@ -8,9 +8,8 @@ import ProfileButton from './ProfileButton'
 
 function HeaderPerfil() {
     const {user} = useContext(UserContext)
-    console.log(user)
   return (
-    <div className=" w-[100%] mt-5">
+    <div className=" w-[100%] sm:mt-5">
       <div  className='mx-auto  max-w-[1440px]    '>
 
         <div className='w-full py-5   px-5 items-center rounded-md bg-mainBg flex globalShadow'>

@@ -11,7 +11,7 @@ function CarouselButton({ redirect }) {
       <h1 className="text-labelMobile font-poppins   md:text-label text-nowrap">
         Veja Mais
       </h1>
-      <LucideMoveUpRight width={24} height={24} className='text-white md:max-w-full max-w-[16px] group-focus:text-mainBg group-hover:text-mainBg' />
+      <LucideMoveUpRight width={24} height={24} className='text-white md:max-w-full max-w-[16px] group-focus:text-mainTitle group-hover:text-mainTitle' />
     </Link>
   );
 }

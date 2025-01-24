@@ -10,7 +10,7 @@ function FooterItems() {
                 <h1 className='text-subtitle text-secundaryTitle'>Departamentos</h1>
           <ul className='flex flex-col  mt-1'>
               {Departamentos.map((item,i) => (
-                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainBg focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
+                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
               ))}
           </ul>
 
@@ -19,7 +19,7 @@ function FooterItems() {
           <h1 className='text-subtitle text-secundaryTitle'>Novidades e Promoções</h1>
           <ul className='flex flex-col  mt-1'>
               {NovidadesPromocoes.map((item,i) => (
-                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainBg focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
+                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
               ))}
           </ul>
           <h1 className='text-subtitle text-secundaryTitle mt-2'>Baixe nossos Aplicativos</h1>
@@ -34,7 +34,7 @@ function FooterItems() {
           <h1 className='text-subtitle text-secundaryTitle'>Minha Conta</h1>
           <ul className='flex flex-col  mt-1'>
               {MinhaConta.map((item,i) => (
-                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainBg focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
+                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
               ))}
           </ul>
 
@@ -43,7 +43,7 @@ function FooterItems() {
           <h1 className='text-subtitle text-secundaryTitle'>Contato</h1>
           <ul className='flex flex-col  mt-1'>
               {Contato.map((item,i) => (
-                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainBg focus:outline-none focus:border-[2px] '>{item.alt}</Link></li>
+                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px] '>{item.alt}</Link></li>
               ))}
           </ul>
 
@@ -52,7 +52,7 @@ function FooterItems() {
           <h1 className='text-subtitle text-secundaryTitle'>Institucional</h1>
           <ul className='flex flex-col  mt-1'>
               {Institucional.map((item,i) => (
-                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainBg focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
+                  <li key={i}><Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px] '>{item.name}</Link></li>
               ))}
           </ul>
 
