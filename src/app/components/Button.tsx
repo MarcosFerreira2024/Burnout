@@ -14,7 +14,7 @@ function Button({label,disabled,classes, ...props}:formButton) {
 
 
   return (
-    <button {...props} disabled={disabled}  className={` ${classes}    globalShadow  self-start disabled:opacity-50 disabled:cursor-not-allowed focus:outline-red-600 focus:bg-secundarySubtitle focus:text-mainTitle  hover:bg-secundarySubtitle  text-secundaryTitle hover:text-mainTitle transition-all duration-300 ease-in-out text-buttonForm     border-[2px] border-mainStroke py-2 font-poppins   bg-mainBg rounded-md  `}>
+    <button {...props} disabled={disabled}  className={` ${classes}    globalShadow  self-start disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-red-600 focus-visible:bg-secundarySubtitle focus-visible:text-mainTitle  hover:bg-secundarySubtitle  text-secundaryTitle hover:text-mainTitle transition-all duration-300 ease-in-out text-buttonForm     border-[2px] border-mainStroke py-2 font-poppins   bg-mainBg rounded-md  `}>
         {label}
     </button>
   )

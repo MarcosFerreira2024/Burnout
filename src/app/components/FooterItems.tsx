@@ -58,7 +58,7 @@ function FooterItems() {
         <ul className='lg:flex flex-col mt-1 hidden'>
           {Departamentos.map((item, i) => (
             <li key={i}>
-              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px]'>
+              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus-visible:bg-white focus-visible:text-mainTitle focus-visible:outline-none focus-visible:border-[2px]'>
                 {item.name}
               </Link>
             </li>
@@ -75,7 +75,7 @@ function FooterItems() {
         <ul className='lg:flex flex-col mt-1 hidden'>
           {NovidadesPromocoes.map((item, i) => (
             <li key={i}>
-              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px]'>
+              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus-visible:bg-white focus-visible:text-mainTitle focus-visible:outline-none focus-visible:border-[2px]'>
                 {item.name}
               </Link>
             </li>
@@ -98,7 +98,7 @@ function FooterItems() {
         <ul className='lg:flex flex-col mt-1 hidden'>
           {MinhaConta.map((item, i) => (
             <li key={i}>
-              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px]'>
+              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus-visible:bg-white focus-visible:text-mainTitle focus-visible:outline-none focus-visible:border-[2px]'>
                 {item.name}
               </Link>
             </li>
@@ -115,7 +115,7 @@ function FooterItems() {
         <ul className='lg:flex flex-col mt-1 hidden'>
           {Contato.map((item, i) => (
             <li key={i}>
-              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px]'>
+              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus-visible:bg-white focus-visible:text-mainTitle focus-visible:outline-none focus-visible:border-[2px]'>
                 {item.alt}
               </Link>
             </li>
@@ -131,7 +131,7 @@ function FooterItems() {
         <ul className='lg:flex flex-col mt-1 hidden'>
           {Institucional.map((item, i) => (
             <li key={i}>
-              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus:bg-white focus:text-mainTitle focus:outline-none focus:border-[2px]'>
+              <Link href={item.ref} className='text-secundarySubtitle text-footerSubtitle hover:opacity-90 focus-visible:bg-white focus-visible:text-mainTitle focus-visible:outline-none focus-visible:border-[2px]'>
                 {item.name}
               </Link>
             </li>
@@ -157,7 +157,7 @@ function FooterItems() {
         </div>
         <ul className='lg:flex flex-col mt-1 hidden'>
           {Atendimento.map((item, i) => (
-            <li key={i} className='text-secundarySubtitle text-footerSubtitle max-w-[200px] focus:border-[2px]'>
+            <li key={i} className='text-secundarySubtitle text-footerSubtitle max-w-[200px] focus-visible:border-[2px]'>
               {item.name}
             </li>
           ))}

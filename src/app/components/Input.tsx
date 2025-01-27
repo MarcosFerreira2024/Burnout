@@ -26,7 +26,7 @@ function Input({ref,inputPassword,type,error,id,label,placeholder,name,...props}
         
         
       </div>
-      <input ref={ref} {...props} className='placeholder:text-placeholderMobile placeholder:md:text-placeholder transition-all  focus:outline-red-600 focus:bg-secundarySubtitle focus:text-mainTitle focus:placeholder:text-mainTitle hover:bg-secundarySubtitle hover:placeholder:text-mainTitle text-secundaryTitle hover:text-mainTitle duration-300 ease-in-out   min-w-[100%] max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins   placeholder:text-secundarySubtitle bg-mainBg rounded-md globalShadow ' type={`${inputPassword?(showPassword?"text":type):type}`} id={id} name={name} placeholder={placeholder} required />
+      <input ref={ref} {...props} className='placeholder:text-placeholderMobile placeholder:md:text-placeholder transition-all  focus-visible:outline-red-600 focus-visible:bg-secundarySubtitle focus-visible:text-mainTitle focus-visible:placeholder:text-mainTitle hover:bg-secundarySubtitle hover:placeholder:text-mainTitle text-secundaryTitle hover:text-mainTitle duration-300 ease-in-out   min-w-[100%] max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins   placeholder:text-secundarySubtitle bg-mainBg rounded-md globalShadow ' type={`${inputPassword?(showPassword?"text":type):type}`} id={id} name={name} placeholder={placeholder} required />
     </div>
   )
 }
