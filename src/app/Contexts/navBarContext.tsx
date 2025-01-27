@@ -22,7 +22,7 @@ type NavBarContext = {
     setAnima:React.Dispatch<React.SetStateAction<boolean>>,
     setPesquisas:React.Dispatch<React.SetStateAction<string[]>>,
     setSearchValue:React.Dispatch<React.SetStateAction<string>>,
-    handleSearch:(e:React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLImageElement>)=>void,
+    handleSearch:(e:React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLOrSVGElement>)=>void,
     handleDeleteSearch:(e:React.MouseEvent<SVGSVGElement>)=>void
     
 };
@@ -31,11 +31,14 @@ export const NavContext = createContext({} as NavBarContext);
 
 export const NavContextProvider = ({ children }: ContextProviderProps) => {
     const [modalPesquisa, showModalPesquisa] = useState(false);
+
     const [modalCategories, showModalCategories] = useState(false);
+
     const [modais,setModais] = useState(false)
 
 
     const [mounted,setMounted] = useState(false)
+
     const [anima,setAnima] = useState(false)
 
     const [searchValue,setSearchValue] = useState('')
@@ -43,24 +46,28 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
     const [pesquisas, setPesquisas] = useState<string[]>([])
     
 
-        function handleSearch (e:React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLImageElement>){
+     function handleSearch (e:React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLImageElement>){
           e.preventDefault()
           if(searchValue !== ''){
             setModais(false)
             showModalPesquisa(false)
             if(!(pesquisas.includes(searchValue))){
-              localStorage.setItem('search',searchValue)
-              setPesquisas([...pesquisas,searchValue])
+              const previousValue = localStorage.getItem('search')
+              const updated = previousValue ? previousValue + " " + searchValue : searchValue
+              localStorage.setItem('search',updated)
+              setPesquisas(updated.split(" "))
               
             }
             redirect(`/home/${searchValue}`)
           }
-          return
+          
+
             
     
     
         }
         useEffect(() => {
+            setSearchValue('')
             if(localStorage.getItem('search') ){
                 if(localStorage.getItem('search') === ""){
                     localStorage.removeItem("search")
@@ -68,18 +75,16 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
                 }
                 const values = localStorage.getItem('search').split(" ")
             
-                setPesquisas(values)
+                setPesquisas([...values])
                 return
                 
             }
-
               
         
             
-            },[setPesquisas] )
-
+        },[setPesquisas] )
+        
         const handleDeleteSearch = (e:React.MouseEvent<SVGSVGElement>)=>{
-            e.preventDefault()
             const updated =pesquisas.filter((item) => {
               if(item !== e.currentTarget.previousElementSibling?.textContent){
                 return item
@@ -88,7 +93,6 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
               setPesquisas(updated)
               localStorage.setItem('search',updated.join(" "))
             
-      
           }
 
 
