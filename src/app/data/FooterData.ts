@@ -159,6 +159,7 @@ export const Institucional = [
 export const Atendimento = [
     {
         name: "Horários de Atendimento :",
+
     },
     {
         name: "08:00 até 22:00 - Segunda a Sexta 09:00 até 15:00 - Sabado",
