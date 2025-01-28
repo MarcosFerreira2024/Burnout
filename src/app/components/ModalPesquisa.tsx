@@ -22,9 +22,12 @@ function ModalPesquisa() {
 
 
         
-          <div className='px-2'>
-            {pesquisas.map((item,i) => (
-              <div key={i} className='flex group  justify-between items-center  mt-5'>
+          <div className='px-2  mt-5'>
+            <div className='py-2 mb-[22px]'>
+              <p  className='   text-placeholder font-poppins text-secundaryTitle '>Pesquisas Recentes :</p>
+            </div>
+            {pesquisas.length>0?pesquisas.map((item,i) => (
+              <div key={i} className='flex group  justify-between items-center mb-4 '>
                 <Link onClick={()=>{
                   setModais(false)
                   showModalPesquisa(false)
@@ -34,7 +37,7 @@ function ModalPesquisa() {
                   <X onClick={handleDeleteSearch} width={16} height={16} className='text-white z-10 group-hover:text-gray-300 cursor-pointer hover:rotate-[25deg] duration-300 ease-out'/> 
               </div>
 
-            ))}
+            )):null}
 
             
           </div>    
