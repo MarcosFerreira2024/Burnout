@@ -5,6 +5,7 @@ export interface Carousel {
     src: string,
     alt: string,
     verMais: boolean
+    redirect?: string
 }
 
 export interface CarouselData {
