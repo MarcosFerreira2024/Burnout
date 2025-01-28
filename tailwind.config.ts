@@ -30,6 +30,7 @@ export default {
         perfilSubtitle: ["16px", "19.2px"],
         perfilSubtitleMobile: ["12px", "14px"],
         produtosTitle: ["24px", "28.8px"],
+        produtosTitleMobile: ["18px", "21.5px"],
         produtosSubtitle: ["16px", "19.2px"],
         produtoTitle: ["36px", "42.4px"],
         produtoMobile: ["28px", "32px"],

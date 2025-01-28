@@ -28,10 +28,10 @@ function NavBar() {
       
             <div className={`flex flex-col items-start gap-5 justify-between min-h-[calc(100vh)]  pt-5 pb-5 `}>
                     <div>
-                        {modais?<Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className={`min-h-[37px] min-w-[37px]`} alt='Logo Burnout' />:
+                        {modais?<Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className={`min-h-[37px] min-w-[37px] cursor-pointer`} alt='Logo Burnout' />:
                         <div>
-                                <Image onClick={()=> redirect('/home')} src={`/auth/logo-burnout.svg`} width={160} height={37} className="hidden xl:block" alt='Logo Burnout' />
-                                <Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className=" xl:hidden min-h-[37px] min-w-[37px]  " alt='Logo Burnout' /> 
+                                <Image onClick={()=> redirect('/home')} src={`/auth/logo-burnout.svg`} width={160} height={37} className="hidden xl:block cursor-pointer" alt='Logo Burnout' />
+                                <Image onClick={()=> redirect('/home')} src={`/ui/logo-mobile.svg`} width={37} height={37} className=" xl:hidden min-h-[37px] min-w-[37px] cursor-pointer  " alt='Logo Burnout' /> 
                         </div>}
                         <div className='flex gap-5 pt-5 flex-col'>
                             {NavData.map((item,i)=> (

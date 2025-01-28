@@ -35,7 +35,7 @@ function CategoriesPage({category}:{category:string}) {
 
                     <div className='mt-[10px]   '>
                         <div className='flex items-center justify-between '>
-                            <h1 className='text-produtosTitle'>{category}: <span className='text-subtitle'>{produtos.length} produtos</span></h1>
+                            <h1 className='md:text-produtosTitle text-produtosTitleMobile'>{category}: <span className='text-subtitleMobile md:text-subtitle text-nowrap'>{produtos.length} produtos</span></h1>
 
                             <FilterButton />
                             

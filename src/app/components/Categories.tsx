@@ -5,7 +5,7 @@ import { LucideMoveUpRight } from 'lucide-react'
 
 function Categories() {
   return (
-    <ul className='w-[100%] px-5 flex flex-col gap-5 pt-5'>
+    <ul className='w-[100%]  px-5 flex flex-col gap-5 pt-5'>
         
         {Departamentos.map((departamento,i)=> (
         <li key={i} >
