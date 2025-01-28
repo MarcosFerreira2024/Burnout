@@ -7,33 +7,15 @@ import { NavContext} from '../Contexts/navBarContext'
 import { NavData } from '../data/NavData'
 import ModalCategories from './ModalCategories'
 import ModalPesquisa from './ModalPesquisa'
-import { logOut } from '../actions/logout'
 
  
 
 
 function NavBar() {
-    const {modalPesquisa,handleModal,modais,showModalPesquisa,showModalCategories,modalCategories} = useContext(NavContext)
+    const {modais,handleModalPesquisa,handleModalCategorias,handleLogout} = useContext(NavContext)
 
 
-    function handleModalPesquisa() { 
-        handleModal(modalPesquisa,showModalPesquisa,modalCategories,showModalCategories) // aqui é passado o modal que deseja ser aberto, a função que seta o estado desse modal  e o modal que será fechado + a função que seta o estado desse modal 
-        return
-    
-    }
-
-    function handleModalCategorias() {
-        handleModal(modalCategories,showModalCategories,modalPesquisa,showModalPesquisa,)
-         return
-
-     }
-    const handleLogout = async () =>{
-        logOut()
-        localStorage.clear()
-        redirect('/login')
-
-        
-    }  
+ 
 
   return (
     <nav>

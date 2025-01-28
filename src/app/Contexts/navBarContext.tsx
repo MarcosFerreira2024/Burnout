@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { createContext, useEffect, useRef, useState } from 'react';
+import { logOut } from '../actions/logout';
 
 type ContextProviderProps = {
     children: React.ReactNode;
@@ -26,7 +27,9 @@ type NavBarContext = {
     handleDeleteSearch:(e:React.MouseEvent<SVGSVGElement>)=>void
     closeAllModais:()=>void
     handleModal:(modalPrincipal:boolean,setModalPrincipal:React.Dispatch<React.SetStateAction<boolean>>,modalSecundario:boolean,setModalSecundario:React.Dispatch<React.SetStateAction<boolean>>) => void
-    
+    handleModalPesquisa:()=>void,
+    handleModalCategorias:()=>void
+    handleLogout:()=>void
 };
 
 export const NavContext = createContext({} as NavBarContext);
@@ -48,6 +51,25 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
     const [pesquisas, setPesquisas] = useState<string[]>([])
 
     const timeOutref = useRef(null)
+
+    function handleModalPesquisa() { 
+        handleModal(modalPesquisa,showModalPesquisa,modalCategories,showModalCategories) // aqui é passado o modal que deseja ser aberto, a função que seta o estado desse modal  e o modal que será fechado + a função que seta o estado desse modal 
+        return
+    
+    }
+
+    function handleModalCategorias() {
+        handleModal(modalCategories,showModalCategories,modalPesquisa,showModalPesquisa,)
+         return
+
+    }
+    const handleLogout = async () =>{
+        logOut()
+        localStorage.clear()
+        redirect('/login')
+
+        
+    } 
 
     function closeAllModais () {
         
@@ -172,7 +194,10 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
                 setAnima,
                 setModais,
                 handleDeleteSearch,
-                handleSearch
+                handleSearch,
+                handleLogout,
+                handleModalPesquisa,
+                handleModalCategorias,
 
                 
             }}
