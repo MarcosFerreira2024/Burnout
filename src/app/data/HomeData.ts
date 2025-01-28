@@ -1,4 +1,4 @@
-import { HomeCategories } from "../Types/Interfaces/Home";
+import { HomeCategories } from "../components/NavCategoriesButton";
 
 export const HomeMainCategories: HomeCategories[] = [
     {
