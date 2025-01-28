@@ -69,7 +69,7 @@ function SingleProductPage({id}:{id:string}) {
                 <Breadcrumb segments={segments}  />
 
                 <FotosProduto fav name={produtos.name} photo={produtos.photo} />
-                <div className='lg:hidden '><Carousel position='object-center' altura='max-h-[750px]' dados={[
+                <div className='lg:hidden '><Carousel verMais={false} position='object-center' altura='max-h-[750px]' dados={[
                 {
                     src: produtos.photo[0],
                     alt: produtos.name,
