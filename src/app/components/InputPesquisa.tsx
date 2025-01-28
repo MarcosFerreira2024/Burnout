@@ -9,7 +9,7 @@ function InputPesquisa({ ref, type, placeholder, name, ...props }: Search) {
   const [isFocused, setIsFocused] = useState(false)
 
   return (
-    <div className="group min-w-full relative flex items-center">
+    <div className="group  relative flex items-center">
       <input
       autoComplete='off'
         ref={ref}
@@ -18,7 +18,7 @@ function InputPesquisa({ ref, type, placeholder, name, ...props }: Search) {
         {...props}
         onFocus={() => setIsFocused(true)} 
         onBlur={() => setIsFocused(false)}  
-        className="focus-visible:outline-red-600 group focus-visible:bg-secundarySubtitle focus-visible:text-mainTitle focus-visible:placeholder:text-mainTitle placeholder:text-searchMobile md:placeholder:text-search transition-all group-hover:bg-secundarySubtitle group-hover:placeholder:text-mainTitle text-secundaryTitle group-hover:text-mainTitle duration-300 ease-in-out min-w-[100%] max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins placeholder:text-secundarySubtitle bg-mainBg rounded-md globalShadow"
+        className="focus-visible:outline-red-600 group focus-visible:bg-secundarySubtitle focus-visible:text-mainTitle focus-visible:placeholder:text-mainTitle placeholder:text-searchMobile md:placeholder:text-search transition-all group-hover:bg-secundarySubtitle group-hover:placeholder:text-mainTitle text-secundaryTitle group-hover:text-mainTitle duration-300 ease-in-out w-full max-w-[400px] border-[2px] border-mainStroke p-2 font-poppins placeholder:text-secundarySubtitle bg-mainBg rounded-md globalShadow"
         type={type}
         name={name}
         placeholder={placeholder}
