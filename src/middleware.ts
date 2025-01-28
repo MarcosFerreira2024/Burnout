@@ -20,6 +20,15 @@ export async function middleware(req: NextRequest) {
         return NextResponse.redirect(home);
     }
 
+    /*    if (req.nextUrl.pathname.includes("/admin")) {
+            if (!user || user.role !== "ADMIN") {
+                return NextResponse.redirect(home);
+            }
+            NextResponse.next();
+        }*/
+
+
+
     return NextResponse.next();
 }
 
@@ -27,6 +36,7 @@ export const config = {
     matcher: [
         "/login",
         "/signup",
+        "/home/admin/:path*",
     ],
 };
 

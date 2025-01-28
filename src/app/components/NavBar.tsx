@@ -7,12 +7,15 @@ import { NavContext} from '../Contexts/navBarContext'
 import { NavData } from '../data/NavData'
 import ModalCategories from './ModalCategories'
 import ModalPesquisa from './ModalPesquisa'
+import { UserContext } from '../Contexts/UserContext'
 
  
 
 
 function NavBar() {
     const {modais,handleModalPesquisa,handleModalCategorias,handleLogout} = useContext(NavContext)
+
+    const {user} = useContext(UserContext)
 
 
  
@@ -35,13 +38,17 @@ function NavBar() {
                         </div>}
                         <div className='flex gap-5 pt-5 flex-col'>
                             {NavData.map((item,i)=> (
-                                <NavButton onClick={item.label==="Pesquisa"?handleModalPesquisa:item.label==="Categorias"?handleModalCategorias:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.src} key={i}/>
+                                <NavButton onClick={item.label==="Pesquisa"?handleModalPesquisa:item.label==="Categorias"?handleModalCategorias:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.label==="perfil"?(user.photo?user.photo:"/ui/perfil.svg"):item.src} key={i}/>
                             ))}
                         </div>
 
                     </div>
         
+                    <div className='flex flex-col gap-5 min-w-full'>
+                    {user.role==="ADMIN"?<NavButton onClick={null} perfil={false} alt='Ver Painel Admin' href={"/home/admin"} label='Admin'  src='/ui/cadeado.svg'/> : null }
                     <NavButton onClick={handleLogout} perfil={false} alt='Sair' href={false} label='Sair' src='/ui/sair.svg' />
+
+                    </div>
             </div >
     
         </main>
