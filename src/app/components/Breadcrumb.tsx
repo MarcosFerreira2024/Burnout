@@ -10,7 +10,7 @@ function Breadcrumb({segments}:{segments:string[]}) {
                 return (
                     <li key={index}>
                         <Link  href={path} className='flex focus-visible:outline-red-600 text-mainTitle'  >
-                            <p className='hover:underline hover:opacity-90   '>{segment.charAt(0).toUpperCase() + segment.slice(1)}</p>
+                            <p className='hover:underline hover:opacity-90   '>{decodeURI(segment.charAt(0).toUpperCase() + segment.slice(1))}</p>
                             <span>/</span>
                         </Link>
                     </li>
