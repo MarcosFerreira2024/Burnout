@@ -5,7 +5,7 @@ import { X } from 'lucide-react'
 import Link from 'next/link'
 
 function ModalPesquisa() {
-    const {modalPesquisa,showModalPesquisa,setModais,handleDeleteSearch,handleSearch,pesquisas} = useContext(NavContext)
+    const {modalPesquisa,closeAllModais,showModalPesquisa,setModais,handleDeleteSearch,handleSearch,pesquisas} = useContext(NavContext)
 
 
 
@@ -13,7 +13,8 @@ function ModalPesquisa() {
     
 
   return (
-    <aside className={`${modalPesquisa?"translate-x-[77px]    ": " translate-x-[-228px]"} z-20  globalShadow rounded-tr-md   w-[300px] min-h-[100%] transition-all ease-in-out duration-700  border-[1px] border-mainStroke   bg-mainBg       fixed`}>
+  <>
+      <aside className={`${modalPesquisa?"translate-x-[77px]    ": " translate-x-[-228px]"} z-20  globalShadow rounded-tr-md   w-[300px] min-h-[100%] transition-all ease-in-out duration-700  border-[1px] border-mainStroke   bg-mainBg       fixed`}>
         <div className='w-[100%] px-5 pt-5'>
           <form onSubmit={handleSearch} >
             <InputPesquisa  name='search' ref={null} placeholder='Pesquisar'  type='search'   />
@@ -38,7 +39,15 @@ function ModalPesquisa() {
             
           </div>    
         </div>
-    </aside> 
+    </aside>
+    {modalPesquisa?<div className=' z-10 fixed w-[100%] h-[100%] ' onTouchStart={closeAllModais} onClick={closeAllModais}>
+      
+    </div> :null}
+
+
+
+
+  </>
   )
 }
 

@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
-import React, { useContext,  useRef } from 'react'
+import React, { useContext } from 'react'
 import NavButton from './NavButtons'
 import { NavContext} from '../Contexts/navBarContext'
 import { NavData } from '../data/NavData'
@@ -13,42 +13,7 @@ import { logOut } from '../actions/logout'
 
 
 function NavBar() {
-    const {modalPesquisa,setModais,modais,showModalPesquisa,showModalCategories,modalCategories,setMounted,setAnima} = useContext(NavContext)
-
-    const timeOutref = useRef(null)
-
-    function handleModal(modalPrincipal:boolean,setModalPrincipal:React.Dispatch<React.SetStateAction<boolean>>,modalSecundario:boolean,setModalSecundario:React.Dispatch<React.SetStateAction<boolean>>){
-        
-        // essa função é para abrir e fechar os modais simultaneamente e evitar que as animações buguem caso o usuário fique fechando e abrindo os modais, função também controla as animações
-
-        if(timeOutref.current) clearTimeout(timeOutref.current) // limpa os timeouts de animação se houver um timeout anterior
-        
-
-            if(modalSecundario && !modalPrincipal){ // verifica se o modal secundario esta aberto antes de abrir o modal principal para evitar que as animações buguem
-                setModalPrincipal(true)
-                setModalSecundario(false)
-                timeOutref.current = setTimeout(()=>{
-                 setAnima(false)
-                },500)
-                return
-            }
-            if(modalPrincipal){ //verifica se o modal principal ja foi aberto
-                setModalPrincipal(false)
-                timeOutref.current = setTimeout(()=>{
-                setAnima(false)
-                },500)
-                setModais(false) // seta os modais como false pois não há nenhum modal aberto , essa lógica de modais abertos e animation afeta as logos e os tamanhos da Nav dentro do componente  NavButton
-                return
-            }
-                setModalPrincipal(true) // se não há nenhum modal aberto, abre o que foi desejado e seta o mounted como true para evitar que a animação ocorra no refresh da página
-                setMounted(true)
-                setModais(true) // seta a logica de modais como aberto
-                setAnima(true)
-                timeOutref.current = setTimeout(()=>{
-                setAnima(false)
-                },500)
-                return
-        }
+    const {modalPesquisa,handleModal,modais,showModalPesquisa,showModalCategories,modalCategories} = useContext(NavContext)
 
 
     function handleModalPesquisa() { 
@@ -63,13 +28,12 @@ function NavBar() {
 
      }
     const handleLogout = async () =>{
-
         logOut()
         localStorage.clear()
         redirect('/login')
 
         
-    }
+    }  
 
   return (
     <nav>
