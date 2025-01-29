@@ -98,9 +98,8 @@ function Carousel({dados,verMais,altura,position}:{dados:CarouselData[],verMais:
     <div className=" w-[100%]">
       <div  className='mx-auto  max-w-[1440px]  relative    overflow-x-hidden  '>
         <div className=' flex h-[100%] justify-between absolute w-[100%] items-center     '>
-              <ChevronLeft onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleSlide(-1)} width={48} height={48} color={`#FFF4F4`}  className='cursor-pointer  z-10  sm:max-w-[48px] max-w-[24px]'/>
-              
-              <ChevronRight onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=>handleSlide(+1)} width={48} height={48} color={`#FFF4F4`} data-id={+1} className='cursor-pointer z-10  sm:max-w-[48px] max-w-[24px]'/>
+              <div className=' rounded-full bg-black/[0.02] md:bg-black/[0.1] mx-1 globalShadow max-w-[36px] max-h-[36px] min-w-[36px] min-h-[36px]  flex items-center justify-center  z-10'><ChevronLeft onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> handleSlide(-1)} width={36} height={36}   className='cursor-pointer   text-secundaryTitle  z-10    md:max-w-[36px]  max-w-[36px]'/></div>
+              <div className=' rounded-full bg-black/[0.02] md:bg-black/[0.1] mx-1 globalShadow max-w-[36px] max-h-[36px] min-w-[36px] min-h-[36px]  flex items-center justify-center  z-10'><ChevronRight onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=>handleSlide(+1)} width={36} height={36}  data-id={+1} className='cursor-pointer z-10   text-secundaryTitle   md:max-w-[36px]  max-w-[36px]'/></div>
         </div>
 
         <div  onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onMouseMove={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{transform: `translateX(calc(-${slide}% ))` }} className='flex   transition-all ease-in-out duration-700   '>

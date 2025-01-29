@@ -150,3 +150,13 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   
 }
+
+
+
+
+@media (max-width: 1558px) {
+  .cards{
+  
+   display:none;
+  }
+}

@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight, } from 'lucide-react'
 import NavCategoriesButton, { HomeCategories } from './NavCategoriesButton'
 
@@ -41,7 +41,11 @@ function NavCategories({ dados }: { dados: HomeCategories[] }) {
     return
   }
 
-  document.documentElement.addEventListener('mouseup',handleMouseUp)
+  useEffect(()=> {
+    document.documentElement.addEventListener('mouseup',handleMouseUp)
+
+    return ()=> document.documentElement.removeEventListener('mouseup',handleMouseUp)
+  },)
 
 
 
