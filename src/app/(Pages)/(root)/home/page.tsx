@@ -2,9 +2,10 @@ import React from 'react'
 import Carousel from '../../../components/Carousel'
 import { Estacoes, MainCarousel } from '../../../data/CarouselData'
 import NavCategories from '../../../components/NavCategories'
-import { HomeMainCategories } from '../../../data/HomeData'
+import { DataRoupas, HomeMainCategories } from '../../../data/HomeData'
 import CardHome from '../../../components/CardHome'
 import Footer from '../../../components/Footer'
+import Roupas from '../../../components/Roupas'
 
 function page() {
   return (
@@ -16,6 +17,8 @@ function page() {
         <CardHome />
 
         <Carousel verMais altura='max-h-[700px]'  dados={Estacoes} />
+
+        <Roupas data={DataRoupas} />
 
         <Footer />
 
