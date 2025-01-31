@@ -1,4 +1,11 @@
+
 const HOST = "http://localhost:3001/api/";
+
+
+
+
+
+
 
 const ACTIONS = {
 
@@ -26,6 +33,20 @@ const ACTIONS = {
             url: `${HOST}produto`,
         }
 
+    },
+    cart: {
+        getAll: {
+            url: `${HOST}user/:userId/cart/`,
+            userId: (userId: string) => `${HOST}user/${userId}/cart`,
+        },
+        addProduct: {
+            url: `${HOST}user/:userId/cart/:produtoId`,
+            userAndProduct: (userId: string, productId: string) => `${HOST}user/${userId}/cart/${productId}`,
+        },
+        deleteProduct: {
+            url: `${HOST}user/:userId/cart/:produtoId`,
+            userAndProduct: (userId: string, productId: string) => `${HOST}user/${userId}/cart/${productId}`,
+        }
     }
 }
 

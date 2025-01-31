@@ -50,6 +50,10 @@ export default {
         linkText: ["14px", "16.8px"],
         buttonForm: ["18px", "21.5px"],
         buttonFormMobile: ["14px", "16px"],
+        cartTitle: ["24px", "28.8px"],
+        cartTitleMobile: ["16px", "19.2px"],
+        cartSubtitle: ["16px", "19.2px"],
+        cartSubtitleMobile: ["12px", "14px"],
 
       },
 

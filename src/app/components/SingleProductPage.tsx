@@ -10,6 +10,7 @@ import { Star } from 'lucide-react'
 import Button from './Button'
 import { ComprasContext } from '../Contexts/ComprasContext'
 import AvisoModal from './AvisoModal'
+import { addProductToCart } from '../actions/cart'
 
 function SingleProductPage({id}:{id:string}) {
 
@@ -35,12 +36,13 @@ function SingleProductPage({id}:{id:string}) {
         },[id])
     const segments = path.split("/").filter(Boolean)
 
-    const handleCompra = () =>{
+    const handleCompra = async  () =>{
         if(timeOutAviso.current) clearTimeout(timeOutAviso.current)
         if(selectedSize===""){
             window.alert("Selecione um tamanho")
             return
         }
+        await addProductToCart(id) 
         setAvisoCompra(true)
         setCanSelect(false)
 
