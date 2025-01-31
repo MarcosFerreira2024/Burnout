@@ -38,7 +38,7 @@ function NavBar() {
                         </div>}
                         <div className='flex gap-5 pt-5 flex-col'>
                             {NavData.map((item,i)=> (
-                                <NavButton onClick={item.label==="Pesquisa"?handleModalPesquisa:item.label==="Categorias"?handleModalCategorias:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.label==="perfil"?(user.photo?user.photo:"/ui/perfil.svg"):item.src} key={i}/>
+                                <NavButton  onClick={item.label==="Pesquisa"?handleModalPesquisa:item.label==="Categorias"?handleModalCategorias:null}  href={item.redirect} alt={item.alt} label={item.label} perfil={item.perfil} src={item.label==="perfil"?(user.photo?user.photo:"/ui/perfil.svg"):item.src} key={i}/>
                             ))}
                         </div>
 
