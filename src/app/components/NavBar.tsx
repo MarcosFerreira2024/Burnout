@@ -45,7 +45,7 @@ function NavBar() {
                     </div>
         
                     <div className='flex flex-col gap-5 min-w-full'>
-                    {user.role==="ADMIN"?<NavButton onClick={null} perfil={false} alt='Ver Painel Admin' href={"/home/admin"} label='Admin'  src='/ui/cadeado.svg'/> : null }
+                    {user.role==="ADMIN"?<NavButton onClick={null} perfil={false} alt='Ver Painel Admin' href={"/admin"} label='Admin'  src='/ui/cadeado.svg'/> : null }
                     <NavButton onClick={handleLogout} perfil={false} alt='Sair' href={false} label='Sair' src='/ui/sair.svg' />
 
                     </div>

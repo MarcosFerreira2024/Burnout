@@ -21,7 +21,7 @@ function OptionsPerfil() {
 
             <h1 className='text-perfilTitle font-poppins text-mainTitle mt-10 md:mt-20 mb-5'>Pedidos : </h1>
 
-            {user.pedidos?.produtos.length>0?<div>
+            {user?user.avaliacoes.length>0?<div>
 
                 {/*logica para pegar os produtos*/}
 
@@ -30,7 +30,7 @@ function OptionsPerfil() {
                 <p className='  text-perfilTitle text-mainSubtitle text-center mb-5'>Você ainda não possui pedidos</p>
                 <OptionsButton classes='max-w-[350px] w-full'   icon='AlertCircle' redirect={'/carrinho'} subtitle={'Veja seu carrinho'} title='Carrinho' />
                 
-            </div>}
+            </div>:null}
 
                 
  

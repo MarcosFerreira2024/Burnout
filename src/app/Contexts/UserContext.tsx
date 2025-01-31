@@ -1,25 +1,12 @@
 "use client"
 import { createContext, useState } from 'react';
+import { User } from '../actions/getUser';
 
 type ContextProviderProps = {
     children: React.ReactNode;
     user: User | null
 };
 
-type User = {
-    name: string;
-    email: string;
-    role: string;
-    photo: string;
-    favoritos:{
-        produtos: string[];
-    };
-    pedidos: {
-        status: string;
-        produtos: string[];
-    }
-    
-};
 
 type Context = {
     user: User;

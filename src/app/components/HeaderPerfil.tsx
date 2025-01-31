@@ -28,12 +28,12 @@ function HeaderPerfil() {
                         </div>
                         <div className='flex gap-2 items-center '>
                             <LucideHeart width={16} height={16}/>
-                            <p className='md:text-perfilSubtitle text-perfilSubtitleMobile'>{user.favoritos?user.favoritos.produtos.length:0} favoritos</p>
+                            <p className='md:text-perfilSubtitle text-perfilSubtitleMobile'>{user.fav?user.fav.length:0} favoritos</p>
 
                         </div>
                         <div className='flex gap-2 items-center '>
                             <LucideShoppingCart width={16} height={16}/>
-                            <p className='md:text-perfilSubtitle text-perfilSubtitleMobile'>{user.pedidos?user.pedidos.status==="concluido"&&user.pedidos.produtos.length:0} compras</p>
+                            <p className='md:text-perfilSubtitle text-perfilSubtitleMobile'>{user.carrinho?(user.carrinho.cartItem.length as number === 1 ? "1 produto no carrinho" :user.carrinho.cartItem.length + " produtos no carrinho"):"0 produtos no carrinho"} </p>
 
                         </div>
                     </div>
