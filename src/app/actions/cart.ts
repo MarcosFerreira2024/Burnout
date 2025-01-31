@@ -41,8 +41,8 @@ export const getCart = async () => {
                 "Authorization": `Bearer ${token.value}`
             },
         })
-        const json = await response.json()
-        return json as Cart[]
+        const json = await response.json() as Cart[]
+        return json
 
     }
     catch (e) {
@@ -92,4 +92,28 @@ export const removeProductFromCart = async (id: string) => {
         console.log(e)
     }
 
+}
+
+export const updateCart = async (cart: Cart[]) => {
+
+
+    try {
+        const user = await getUser()
+        const token = (await cookies()).get("token")
+        if (user instanceof Error) throw new Error(user.message)
+        const response = await fetch(`${ACTIONS.cart.getAll.userId(user.id,)}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.value}`
+            },
+            body: JSON.stringify(cart)
+
+        })
+        const json = await response.json()
+        if (response.status !== 200) throw new Error(json.message)
+        return json
+    } catch (e) {
+        console.log(e)
+    }
 }

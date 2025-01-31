@@ -36,7 +36,7 @@ const ACTIONS = {
     },
     cart: {
         getAll: {
-            url: `${HOST}user/:userId/cart/`,
+            url: `${HOST}user/:userId/cart`,
             userId: (userId: string) => `${HOST}user/${userId}/cart`,
         },
         addProduct: {
@@ -47,6 +47,7 @@ const ACTIONS = {
             url: `${HOST}user/:userId/cart/:produtoId`,
             userAndProduct: (userId: string, productId: string) => `${HOST}user/${userId}/cart/${productId}`,
         }
+
     }
 }
 
