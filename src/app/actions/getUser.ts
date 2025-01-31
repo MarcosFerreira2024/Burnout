@@ -2,6 +2,25 @@
 import { cookies } from "next/headers";
 import ACTIONS from "../consts/Urls";
 
+export type User = {
+    id: string,
+    name: string,
+    photo: string | null,
+    password: string,
+    role: string,
+    status: boolean,
+    email: string,
+    carrinho: {
+        id: string,
+        userId: string,
+        cartItem: []
+    },
+    fav: [],
+    avaliacoes: [],
+    comments: [],
+    code: string | null
+}
+
 export async function getUser() {
     try {
         const token = (await cookies()).get("token")
@@ -19,10 +38,11 @@ export async function getUser() {
                 throw new Error("Usuário não foi encontrado")
             }
 
-            const json = await response.json()
+            const json = await response.json() as User
 
 
-            return json
+
+            return json as User
         }
         throw new Error("Sem Token")
 
@@ -35,3 +55,5 @@ export async function getUser() {
 
 
 }
+
+
