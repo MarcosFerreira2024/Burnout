@@ -2,9 +2,8 @@ import React from 'react'
 import CartItems from '../../../components/CartItems'
 import CartInfo from '../../../components/CartInfo';
 
-export const dynamic = "force-dynamic";
 
-async function page() {
+function page() {
 
 
 
