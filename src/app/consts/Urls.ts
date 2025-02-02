@@ -29,8 +29,15 @@ const ACTIONS = {
         getAll: {
             url: `${HOST}produtos?name=`,
         },
+        getAllAdmin: {
+            url: `${HOST}produtos?name=Produtos`,
+        },
         getOne: {
             url: `${HOST}produto`,
+        },
+        deleteOne: {
+            url: `${HOST}produto/:id`,
+            productId: (id: string) => `${HOST}produto/${id}`
         }
 
     },

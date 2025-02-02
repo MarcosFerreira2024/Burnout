@@ -3,43 +3,43 @@ import { Roupa } from "../components/Roupas";
 
 export const HomeMainCategories: HomeCategories[] = [
     {
-        ref: "/home/produtos/sandalias",
+        ref: "/home/sandalia",
         text: "Sandálias"
     },
     {
-        ref: "/home/produtos/blusas",
+        ref: "/home/blusa",
         text: "Blusas"
     },
     {
-        ref: "/home/produtos/vestidos",
+        ref: "/home/vestido",
         text: "Vestidos"
     },
     {
-        ref: "/home/produtos/calcas",
+        ref: "/home/calca",
         text: "Calças"
     },
     {
-        ref: "/home/produtos/bermudas",
+        ref: "/home/bermuda",
         text: "Bermudas"
     },
     {
-        ref: "/home/produtos/calcinhas",
+        ref: "/home/calcinha",
         text: "Calcinhas"
     },
     {
-        ref: "/home/produtos/oculos",
+        ref: "/home/oculo",
         text: "Óculos"
     },
     {
-        ref: "/home/produtos/braceletes",
+        ref: "/home/bracelete",
         text: "Braceletes"
     },
     {
-        ref: "/home/produtos/chapeus",
+        ref: "/home/chapeu",
         text: "Chapéus"
     },
     {
-        ref: "/home/produtos/sutias",
+        ref: "/home/sutia",
         text: "Sutiãs"
     }
 ]

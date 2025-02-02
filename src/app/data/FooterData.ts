@@ -2,53 +2,53 @@ export const Departamentos = [
 
     {
         name: "Acessórios",
-        ref: "/home/produtos/acessorios",
+        ref: "/home/acessório",
 
     },
     {
         name: "Calçados",
-        ref: "/home/produtos/calcados",
+        ref: "/home/calçado",
 
     },
     {
         name: "Moda Íntima",
-        ref: "/home/produtos/calcinhas",
+        ref: "/home/calcinha",
 
     },
     {
         name: "Bolsas",
-        ref: "/home/produtos/bolsas"
+        ref: "/home/bolsa"
     },
     {
         name: "Maquiagem",
-        ref: "/home/produtos/maquiagem"
+        ref: "/home/maquiagem"
     },
     {
         name: "Perfumes",
-        ref: "/home/produtos/perfumes"
+        ref: "/home/perfume"
     },
     {
         name: "Vestidos",
-        ref: "/home/produtos/vestidos"
+        ref: "/home/vestido"
     },
     {
         name: "Blusas",
-        ref: "/home/produtos/blusas"
+        ref: "/home/blusa"
     },
     {
         name: "Saias",
-        ref: "/home/produtos/saias"
+        ref: "/home/saia"
     },
     {
         name: "Calças",
-        ref: "/home/produtos/calcas"
+        ref: "/home/calca"
     }
 ]
 
 export const NovidadesPromocoes = [
     {
         name: "Black Friday",
-        ref: "/home/produtos/blackfriday"
+        ref: "/home/blackfriday"
     },
     {
         name: "Cupons",
@@ -81,7 +81,7 @@ export const NovidadesPromocoes = [
 export const MinhaConta = [
     {
         name: "Meus Pedidos",
-        ref: "/perfi/pedidos"
+        ref: "/perfil/pedidos"
     },
     {
         name: "Alterar Dados",
