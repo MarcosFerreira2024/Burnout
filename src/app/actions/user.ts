@@ -1,6 +1,7 @@
 "use server"
 import { cookies } from "next/headers";
 import ACTIONS from "../consts/Urls";
+import { redirect } from "next/navigation";
 
 export type User = {
     id: string,
@@ -30,26 +31,26 @@ export async function getUser() {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token?.value}`
+                    "Authorization": `Bearer ${token.value}`
                 }
             })
             if (response.status !== 200) {
                 (await cookies()).delete("token")
-                throw new Error("Usuário não foi encontrado")
+                localStorage.clear()
+                redirect("/login")
             }
 
             const json = await response.json() as User
 
 
-
-            return json as User
+            return json
         }
-        throw new Error("Sem Token")
+        redirect("/login")
 
 
     } catch (e) {
         if (e instanceof Error) {
-            return new Error(e.message)
+            console.log(e.message)
         }
     }
 
@@ -57,3 +58,31 @@ export async function getUser() {
 }
 
 
+export const updateUser = async (url: string) => {
+
+
+    try {
+        const token = (await cookies()).get("token")
+
+        const response = await fetch(ACTIONS.user.update.url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.value}`
+            },
+            body: JSON.stringify({
+                photo: url.replace("http", "https")
+            })
+        })
+
+        const json = await response.json()
+
+        console.log(json)
+        return json
+
+
+
+    } catch (e) {
+        console.log(e)
+    }
+}

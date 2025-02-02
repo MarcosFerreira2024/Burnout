@@ -1,6 +1,6 @@
 "use server"
 import { NextRequest, NextResponse } from "next/server";
-import { getUser } from "./app/actions/getUser";
+import { getUser } from "./app/actions/user";
 
 export async function middleware(req: NextRequest) {
     const home = new URL("/home", req.url);

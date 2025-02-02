@@ -28,7 +28,7 @@ export const getAllProductsAdmin = async (url: string) => {
         return json as Product[]
     }
     catch (e) {
-        throw e
+        return e
     }
 }
 
@@ -46,6 +46,6 @@ export const getOneProduct = async (id: string) => {
         return json as Product
     }
     catch (e) {
-        throw e
+        return e
     }
 }

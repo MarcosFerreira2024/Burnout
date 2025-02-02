@@ -25,7 +25,7 @@ function NavBar() {
 
             <ModalPesquisa />
             <ModalCategories/>
-        <main className='px-5 fixed globalShadow   bg-mainBg z-[999]     '>
+        <main className='px-5 fixed globalShadow   bg-mainBg z-[120]     '>
             
 
       

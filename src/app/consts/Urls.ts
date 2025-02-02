@@ -20,6 +20,9 @@ const ACTIONS = {
     user: {
         getOne: {
             url: `${HOST}user`
+        },
+        update: {
+            url: `${HOST}user`
         }
     },
     code: {
