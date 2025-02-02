@@ -1,41 +1,40 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React  from 'react'
 import FilterButton from './FilterButton'
 import { getAllProducts } from '../utils/Products'
 import Breadcrumb from './Breadcrumb'
 import Produtos from './Produtos'
-import { Product } from '../Types/Interfaces/Produtos'
+import useSWR from 'swr'
+import ACTIONS from '../consts/Urls'
 
 function CategoriesPage({category}:{category:string}) {
 
-    const [produtos,setProdutos] = useState<null |Product[]>(null)
     const path = usePathname()
 
 
-    useEffect(()=>{
-        async function getProdutos(category:string) {
-            const produtos = await getAllProducts(category)
-            setProdutos(produtos)
-        }
-        getProdutos(category)
 
-    },[category])
+
+
+
+    const { data, isLoading } = useSWR([ACTIONS.produtos.getAll.url,category] ,getAllProducts)
+
     const segments = path.split("/").filter(Boolean)
 
 
 
 
   return (
-    <>
-        {produtos?<section className=' max-w-[1440px]  mx-auto  w-full flex flex-col'>
+    <>  
+        
+        {isLoading?"" :data?  <section className=' max-w-[1440px]  mx-auto  w-full flex flex-col'>
             <header>
                 <nav className='flex flex-col w-full font-poppins text-linkText text-mainTitle'>
                     <Breadcrumb segments={segments}/>
 
                     <div className='mt-[10px]   '>
                         <div className='flex items-center justify-between '>
-                            <h1 className='md:text-produtosTitle text-produtosTitleMobile'>{decodeURI(category)}: <span className='text-subtitleMobile md:text-subtitle text-nowrap'>{produtos.length} produtos</span></h1>
+                            <h1 className='md:text-produtosTitle text-produtosTitleMobile'>{decodeURI(category)}: <span className='text-subtitleMobile md:text-subtitle text-nowrap'>{data.length} produtos</span></h1>
 
                             <FilterButton />
                             
@@ -51,7 +50,7 @@ function CategoriesPage({category}:{category:string}) {
             </header>
             <section className='mt-[40px] '>
                 <ul className='lg:grid flex flex-wrap justify-center  lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-                    {produtos.map((produto)=>(
+                    {data.map((produto)=>(
                         <li className='' key={produto.id}><Produtos fav={produto.favorito} name={produto.name}  id={produto.id} category={produto.category} photo={produto.photo} price={produto.price}  /></li>
                     ))}
                 </ul>
