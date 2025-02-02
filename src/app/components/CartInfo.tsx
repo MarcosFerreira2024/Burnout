@@ -2,12 +2,18 @@
 import React, { useContext } from 'react'
 
 import Button from './Button'
+import { UserContext } from '../Contexts/UserContext';
 
-import { UserContext } from '../Contexts/UserContext'
+
 
 function CartInfo() {
 
-    const {cart} =  useContext(UserContext)
+    
+    const {cart} = useContext(UserContext)
+
+
+        
+
 
 
     const produtos = cart && cart.length>0?cart.reduce((acc, item) => acc + item.quantity, 0):null;

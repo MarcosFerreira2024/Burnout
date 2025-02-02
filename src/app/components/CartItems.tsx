@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import {  removeProductFromCart, updateCart } from '../actions/cart'; // Adicione a função updateCart
+import { removeProductFromCart, updateCart } from '../actions/cart'; 
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, LucideTrash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -10,19 +10,28 @@ import { UserContext } from '../Contexts/UserContext';
 
 function CartItems() {
 
-    const {cart,setDataCart} = useContext(UserContext);
+    const {cart, setDataCart} = useContext(UserContext);
+
+
+
+
+
+
 
     const refFoto = useRef(null);
     const refCategories = useRef(null);
     const [hovering, setFotoHovering] = useState<null | HTMLImageElement>(null);
     const route = useRouter();
 
+
+    
+
     const timeOut = useRef(null);
 
     async function handleDelete(productId: string) {
         if(timeOut.current) return
         await removeProductFromCart(productId);
-        window.location.reload();
+        window.location.reload()
     }
 
     const handleIncrease = async (index: number) => {
@@ -94,7 +103,7 @@ function CartItems() {
             onMouseUp={handleMouseUp}
             className='flex flex-col scrollable-content mt-10 font-poppins gap-10 px-1 pb-1'
         >
-            {cart && cart.length >= 1 ? (
+           { cart && cart.length >= 1 ? 
                 cart.map((item, index) => (
                     <div key={item.product.id} className='bg-white max-h-[192px] globalShadow select-none rounded-md border-[0.5px] relative border-[#eeeeee]'>
                         <button
@@ -153,11 +162,11 @@ function CartItems() {
                         </div>
                     </div>
                 ))
-            ) : (
+             : 
                 <div>
                     <Button label='Continuar Comprando' classes='px-10 py-5' redirect='/home' version={2} />
                 </div>
-            )}
+            }
         </div>
     );
 }

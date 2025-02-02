@@ -1,7 +1,7 @@
 "use server"
 import { cookies } from "next/headers"
 import ACTIONS from "../consts/Urls"
-import { getUser } from "./getUser"
+import { getUser } from "./user"
 
 export type Cart = {
     quantity: number,
@@ -30,23 +30,25 @@ export const getCart = async () => {
     try {
         const user = await getUser()
         const token = (await cookies()).get("token")
-        if (user instanceof Error) throw new Error(user.message)
 
-
-
-        const response = await fetch(`${ACTIONS.cart.getAll.userId(user.id)}`, {
+        const response = await fetch(ACTIONS.cart.getAll.userId(user.id), {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token.value}`
             },
         })
-        const json = await response.json() as Cart[]
-        return json
+        const json = await response.json()
+        if (response.status !== 200) throw new Error(json.message)
+
+
+        return json as Cart[]
+
+
 
     }
     catch (e) {
-        console.log(e)
+        throw e
     }
 }
 
