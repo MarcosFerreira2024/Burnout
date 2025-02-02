@@ -1,6 +1,6 @@
 "use client"
-import { usePathname } from 'next/navigation'
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import { usePathname} from 'next/navigation'
+import React, {   useContext, useEffect, useRef, useState } from 'react'
 import {  getOneProduct } from '../utils/Products'
 import Breadcrumb from './Breadcrumb'
 import { Product } from '../Types/Interfaces/Produtos'
@@ -10,10 +10,13 @@ import { Star } from 'lucide-react'
 import Button from './Button'
 import { ComprasContext } from '../Contexts/ComprasContext'
 import AvisoModal from './AvisoModal'
-import { addProductToCart } from '../actions/cart'
+import { UserContext } from '../Contexts/UserContext'
+import { addProductToCart, getCart } from '../actions/cart'
 
 function SingleProductPage({id}:{id:string}) {
 
+
+    
     const [produtos,setProdutos] = useState<null |Product>(null)
     const [selectedSize, setSize] = useState("")
 
@@ -25,7 +28,14 @@ function SingleProductPage({id}:{id:string}) {
 
     const path = usePathname()
 
+    const { setDataCart} = useContext(UserContext)
+
+
+
+    
+
     useEffect(()=>{
+
             async function getProdutos(id:string) {
                 const produtos = await getOneProduct(id)
                 setProdutos(produtos)
@@ -41,14 +51,21 @@ function SingleProductPage({id}:{id:string}) {
         if(selectedSize===""){
             window.alert("Selecione um tamanho")
             return
-        }
-        await addProductToCart(id) 
+        }  
+        await addProductToCart(produtos.id)
+
+        const cart = await getCart()
+        
+        
         setAvisoCompra(true)
         setCanSelect(false)
+        setDataCart(cart)
+
 
         timeOutAviso.current = setTimeout(()=>{
             setAvisoCompra(false)
             setCanSelect(true)
+            
         },2000)
     }
     const handleSize = (size:string) =>{
@@ -57,7 +74,9 @@ function SingleProductPage({id}:{id:string}) {
             return
         }
         setSize(size)
-    }    
+    } 
+    
+
 
 
   return (
