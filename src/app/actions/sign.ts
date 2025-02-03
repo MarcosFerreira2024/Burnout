@@ -17,10 +17,10 @@ export async function sign(state: { name: string, ok: boolean, error: string, da
             },
             body: JSON.stringify({ email, password, confirmPassword, name })
         })
-        const json = await response.json()
+        const json = await response.json() as { message: string }
 
         if (response.status !== 200) {
-            if (json.message.includes("Verifique")) state = { data: null, name: name.toString().split(" ")[0].charAt(0).toLocaleUpperCase() + name.toString().split(" ")[0].slice(1), error: json.message, ok: false }
+            if (json && json.message.includes("Verifique")) state = { data: null, name: name.toString().split(" ")[0].charAt(0).toLocaleUpperCase() + name.toString().split(" ")[0].slice(1), error: json.message, ok: false }
 
             throw new Error(json.message)
         }

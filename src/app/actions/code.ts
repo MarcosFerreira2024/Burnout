@@ -16,7 +16,7 @@ export async function code(state: { ok: boolean, error: string, data: string | n
         })
         const json = await response.json()
 
-        if (response.status !== 200) throw new Error(json.message)
+        if (response.status !== 200) throw new Error("Código Inválido")
 
         if (json.token) {
             const cookieStore = await cookies()
@@ -30,11 +30,11 @@ export async function code(state: { ok: boolean, error: string, data: string | n
 
             return state = { data: "", ok: true, error: "", }
         }
-        return state = { data: null, ok: false, error: json.message }
+        return state = { data: null, ok: false, error: "Código Inválido" }
 
     } catch (e) {
         if (e instanceof Error) {
-            return state = { data: null, ok: false, error: e.message }
+            return state = { data: null, ok: false, error: "Código Inválido" }
         }
         return state = { data: null, ok: false, error: "Ocorreu um Erro inesperado" }
     }

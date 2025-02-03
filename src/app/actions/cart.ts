@@ -2,6 +2,7 @@
 import { cookies } from "next/headers"
 import ACTIONS from "../consts/Urls"
 import { getUser } from "./user"
+import { redirect } from "next/navigation"
 
 export type Cart = {
     quantity: number,
@@ -29,7 +30,11 @@ export type Product = {
 export const getCart = async () => {
     try {
         const user = await getUser()
+
+
         const token = (await cookies()).get("token")
+
+        if (!token) redirect("/login")
 
         const response = await fetch(ACTIONS.cart.getAll.userId(user.id), {
             method: "GET",
@@ -48,7 +53,7 @@ export const getCart = async () => {
 
     }
     catch (e) {
-        throw e
+        console.log(e)
     }
 }
 
