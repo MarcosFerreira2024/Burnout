@@ -61,8 +61,13 @@ export async function getUser() {
 export const updateUser = async (url: string) => {
 
 
+    const newPhotoUrl = url.replace("http", "https")
+
+
     try {
         const token = (await cookies()).get("token")
+
+        if (!url) throw new Error("URL não encontrada")
 
         const response = await fetch(ACTIONS.user.update.url, {
             method: "PUT",
@@ -71,9 +76,10 @@ export const updateUser = async (url: string) => {
                 "Authorization": `Bearer ${token.value}`
             },
             body: JSON.stringify({
-                photo: url.replace("http", "https")
+                photo: newPhotoUrl
             })
         })
+
 
         const json = await response.json()
 

@@ -9,6 +9,12 @@ import ProfileButton from './ProfileButton'
 function HeaderPerfil() {
     const {user,cart,setModalPicture} = useContext(UserContext)
 
+    
+    const verFoto = () => {
+        
+        window.open(`${user.photo}`,"_blank")
+    }
+
 
 
   return (
@@ -19,7 +25,7 @@ function HeaderPerfil() {
             <div className='flex  justify-between items-center w-full text-secundaryTitle font-poppins'>
                 <div className='flex gap-2'>
                     <div className='relative group  max-h-[80px] max-w-[80px] min-h-[80px] min-w-[80px] md:max-h-[98px] md:max-w-[98px] md:min-h-[98px] md:min-w-[98px]'>
-                        <Image title={user.name} alt={"foto de " + user.name} src={user.photo?user.photo:"/ui/perfil.png"} width={112} height={112} className='w-[80px] h-[80px] md:w-[98px] md:h-[98px] globalShadow   duration-300 ease-in-out transition-colors  object-center rounded-full border-2 border-mainStroke object-cover' />
+                        <Image onClick={verFoto} title={user.name} alt={"foto de " + user.name} src={user.photo?user.photo:"/ui/perfil.png"} width={112} height={112} className='w-[80px] h-[80px] md:w-[98px] md:h-[98px] globalShadow   duration-300 ease-in-out transition-colors  object-center rounded-full border-2 border-mainStroke object-cover' />
                         <SmallButtonForIcons title={"Trocar foto de Perfil"} onClick={()=> setModalPicture(true)} />
                     </div>
                     <div className='flex flex-col gap-1'>
