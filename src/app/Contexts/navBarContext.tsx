@@ -24,7 +24,7 @@ type NavBarContext = {
     setPesquisas:React.Dispatch<React.SetStateAction<string[]>>,
     setSearchValue:React.Dispatch<React.SetStateAction<string>>,
     handleSearch:(e:React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLOrSVGElement>)=>void,
-    handleDeleteSearch:(e:React.MouseEvent<SVGSVGElement>)=>void
+    handleDeleteSearch:(e:React.MouseEvent<SVGSVGElement | HTMLButtonElement>)=>void
     closeAllModais:()=>void
     handleModal:(modalPrincipal:boolean,setModalPrincipal:React.Dispatch<React.SetStateAction<boolean>>,modalSecundario:boolean,setModalSecundario:React.Dispatch<React.SetStateAction<boolean>>) => void
     handleModalPesquisa:()=>void,
