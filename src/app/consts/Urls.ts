@@ -1,5 +1,10 @@
 
-const HOST = "http://localhost:3001/api/";
+
+const production = false
+
+const HOST = production ? "http://localhost:3001/api/" : "https://burnout-back-end.vercel.app/api/";
+
+
 
 
 
