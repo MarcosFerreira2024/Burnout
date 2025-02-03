@@ -1,3 +1,4 @@
+"use client"
 import React, { useContext} from 'react'
 import InputPesquisa from './InputPesquisa'
 import { NavContext } from '../Contexts/navBarContext'
@@ -25,8 +26,10 @@ function ModalPesquisa() {
           <div className='px-2  mt-5'>
             <div className='py-2 mb-[22px] justify-between flex items-center '>
               <p  className='   text-placeholder font-poppins text-secundaryTitle text-nowrap'>Pesquisas Recentes :</p>
-              {localStorage.getItem('search')?<button title='Limpar pesquisas' className='outline-red-300'  onClick={()=>{ localStorage.setItem("search","")
-                 setPesquisas([])}}><Trash2  width={16} height={16} className='text-white hover:rotate-[25deg] cursor-pointer duration-300 ease-out'/></button> :null}
+              {localStorage.getItem('search') && localStorage.getItem('search')!="" ?<button title='Limpar pesquisas' className='outline-red-300'  onClick={()=>{
+                  localStorage.removeItem("search")
+                  setPesquisas([])
+                 }}><Trash2  width={16} height={16} className='text-white hover:rotate-[25deg] cursor-pointer duration-300 ease-out'/></button> :null}
             </div>
             {pesquisas.length>0?pesquisas.map((item,i) => (
               <div key={i} className='flex group  justify-between items-center mb-4 '>
