@@ -10,7 +10,7 @@ import { CarouselData } from '../Types/Interfaces/Carousel'
 function Carousel({dados,verMais,altura,position}:{dados:CarouselData[],verMais:boolean,altura?:string,position?:string}) {
   const refTimeout = useRef(null)
 
-  const interval = 100000000000
+  const interval = 6000
 
 
   const [slide,setSlide]= useState(0)
