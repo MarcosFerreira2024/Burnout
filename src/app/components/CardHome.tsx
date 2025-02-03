@@ -13,7 +13,7 @@ function CardHome() {
     <div className='max-w-[1300px] cards select-none block  mx-auto h-[500px]  min-w-[1024px] w-full  relative mt-[116px] mb-[120px] '>
         <div className=' w-[100%] h-[100%] flex justify-center relative'>
           <div className='absolute  flex  top-0 left-[0px] '>
-            <Image quality={99} src={"/home/card4.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full ' />
+            <Image  src={"/home/card4.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full ' />
             <div className='absolute  flex flex-col top-2 left-5'>
               <h1 className='font-alex text-titleMobile text-mainTitle'>Camisetas</h1>
               
@@ -22,7 +22,7 @@ function CardHome() {
             </div>
           </div>
           <div className='absolute  flex   left-0   bottom-[-7px]'>
-            <Image quality={99} src={"/home/card3.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full  ' />
+            <Image  src={"/home/card3.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full  ' />
             <div className='absolute  flex flex-col top-2 left-5'>
               <h1 className='font-alex text-titleMobile text-mainTitle'>Blusas</h1>
               
@@ -32,7 +32,7 @@ function CardHome() {
 
           </div>
           <div className='absolute  flex  right-0   bottom-[-20px] '>
-            <Image quality={99} src={"/home/card2.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full' />
+            <Image  src={"/home/card2.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full' />
             <div className='absolute  flex flex-col top-2 left-5'>
               <h1 className='font-alex text-titleMobile text-mainTitle'>Vestidos</h1>
               
@@ -41,7 +41,7 @@ function CardHome() {
             </div>
           </div>
           <div className='absolute  flex  right-0  top-[13px]'>
-            <Image quality={99} src={"/home/card1.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full  ' />
+            <Image  src={"/home/card1.png"} alt='card1' width={650} height={240} className='  min-h-[190px] max-w-[650px] object-cover w-full  ' />
             <div className='absolute  flex flex-col top-2 left-5'>
               <h1 className='font-alex text-titleMobile text-mainTitle'>Óculos</h1>
               

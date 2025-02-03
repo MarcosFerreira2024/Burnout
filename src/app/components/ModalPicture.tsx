@@ -62,7 +62,7 @@ function ModalPicture() {
             <label className='hover:scale-110 ease-in-out duration-300 transition-all py-10 px-10 ' htmlFor="file"><Upload  width={56} height={56} className=' text-mainTitle' /></label>
             <input type="file" id='file' name='file' onChange={handlePreview} className='hidden' />
             {value ? <div className='flex flex-col items-center absolute top-5 pointer-events-none'>
-                <Image src={value} quality={100} width={120} height={120} alt='' title=''  className='rounded-full bg-white w-full h-full border-[1px] max-h-[120px] min-w-[120px] object-center min-h-[120px] max-w-[120px] object-cover' />
+                <Image src={value}  width={120} height={120} alt='' title=''  className='rounded-full bg-white w-full h-full border-[1px] max-h-[120px] min-w-[120px] object-center min-h-[120px] max-w-[120px] object-cover' />
 
             </div> : null}
             <Button disabled={error} type='submit' version={1}  classes='px-5 py-2  border-mainStroke self-center' label={'Enviar'} />

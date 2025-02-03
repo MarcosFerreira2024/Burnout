@@ -33,7 +33,7 @@ function Produtos({id,fav,photo,category,name,price,}:ComponenteProduto) {
     <article onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className='flex flex-col font-poppins w-full max-w-[400px]   '>
         <Link href={`/home/${category[0]}/${id}`} className='focus-visible:outline-red-600 '>
         <div className='relative  '>
-                {hover && photo.length>1 ?<Image src={photo[1]} width={348} quality={100} height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />:<Image src={photo[0]} width={348} quality={100} height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />}
+                {hover && photo.length>1 ?<Image src={photo[1]} width={348}  height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />:<Image src={photo[0]} width={348}  height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />}
                 <div onClick={(e)=> {
                   e.preventDefault()
                 }} className='absolute top-[10px] right-[10px]'><FavButton favorito={fav}/></div>
