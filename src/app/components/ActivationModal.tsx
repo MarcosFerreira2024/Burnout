@@ -45,8 +45,9 @@ function ActivationModal() {
                     <div className='w-[full] h-[2px] bg-mainBg globalShadow '></div>
                 </div>
 
-            <form action={action} className='flex-col gap-5 flex'>
-                <Input ref={ref} id='code' label='Código de Ativação :' name='code' placeholder='Insira o código que foi enviado ao seu Email' type='text' />
+            <form action={action} className='flex-col gap-5 flex relative'>
+                {state.error? <p className='text-sm text-red-600  absolute left-0 top-[-20px]'>{state.error}</p>:null}
+                <Input ref={ref} id='code' label='Código de Ativação :' name='code'  placeholder='Insira o código' type='text' />
                 <FormButton labelEnvio={"Enviando..."} labelPadrao={"Enviar"} />
             </form>
         </div>
