@@ -13,7 +13,7 @@ export const getAllProducts = async ([url, category]) => {
         return json as Product[]
     }
     catch (e) {
-        throw e
+        console.log(e)
     }
 }
 
@@ -28,7 +28,7 @@ export const getAllProductsAdmin = async (url: string) => {
         return json as Product[]
     }
     catch (e) {
-        return e
+        console.log(e)
     }
 }
 
@@ -46,6 +46,6 @@ export const getOneProduct = async (id: string) => {
         return json as Product
     }
     catch (e) {
-        return e
+        console.log(e)
     }
 }
