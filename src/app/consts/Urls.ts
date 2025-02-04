@@ -1,6 +1,6 @@
 
 
-const production = false
+const production = true
 
 const HOST = production ? "http://localhost:3001/api/" : "https://burnout-back-end.vercel.app/api/";
 
@@ -34,6 +34,10 @@ const ACTIONS = {
         url: `${HOST}code`,
     },
     produtos: {
+        create: {
+            url: `${HOST}produto`
+
+        },
         getAll: {
             url: `${HOST}produtos?name=`,
         },
