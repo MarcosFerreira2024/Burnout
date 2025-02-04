@@ -1,11 +1,16 @@
 "use client"
-import React, { useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import FavButton from './FavButton'
 import Image from 'next/image'
  
 
 function FotosProduto({photo,name,fav}:{photo:string[],name:string,fav:boolean}) {
     const [fotoAtual,setfoto] = useState<string>(photo[0])
+
+    useEffect(()=>{
+        setfoto (photo[0])
+    },[photo])
+
   return (
     <div className='hidden lg:flex flex-col   w-full lg:max-w-[640px]  '>
             <div >

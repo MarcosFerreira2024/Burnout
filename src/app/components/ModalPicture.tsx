@@ -33,7 +33,7 @@ function ModalPicture() {
 
         if(data instanceof Error) return setError(data.message)
 
-        const updated = await updateUser(data)
+        const updated = await updateUser(data.url)
 
         if(updated){
             window.alert("Foto alterada com sucesso")
