@@ -40,12 +40,13 @@ export const getOneProduct = async (id: string) => {
 
         const json = await response.json()
 
-        if (response.status !== 200) throw new Error
+        if (response.status !== 200) return new Error("Produto nao encontrado")
 
 
         return json as Product
     }
     catch (e) {
         console.log(e)
+        return
     }
 }

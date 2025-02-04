@@ -35,7 +35,7 @@ function Login() {
   useEffect(()=>{
     
     if(submit === true){
-      if(state.error.includes("Verifique")){
+      if(state.error &&state.error.includes("Verifique")){
         setSubmit(false)
         setShowActivationModal(true)
         return

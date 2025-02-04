@@ -15,7 +15,6 @@ export default async function RootLayout({
   
   const data = await getUser();
 
-  if(data instanceof Error) throw new Error (data.message)
 
   const dataCart = await getCart()
 

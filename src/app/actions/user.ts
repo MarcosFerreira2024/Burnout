@@ -36,7 +36,6 @@ export async function getUser() {
             })
             if (response.status !== 200) {
                 (await cookies()).delete("token")
-                localStorage.clear()
                 redirect("/login")
             }
 
@@ -83,12 +82,13 @@ export const updateUser = async (url: string) => {
 
         const json = await response.json()
 
-        console.log(json)
         return json
 
 
 
     } catch (e) {
         console.log(e)
+        return
+
     }
 }

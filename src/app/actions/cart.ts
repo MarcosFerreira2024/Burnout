@@ -122,5 +122,7 @@ export const updateCart = async (cart: Cart[]) => {
         return json
     } catch (e) {
         console.log(e)
+        return
+
     }
 }

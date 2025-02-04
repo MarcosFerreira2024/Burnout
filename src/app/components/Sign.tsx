@@ -28,7 +28,7 @@ function Sign() {
           redirect("/login")
         }
         
-        if(state.error.includes("Verifique")){
+        if(state.error && state.error.includes("Verifique")){
           setShowActivationModal(true)
           redirect("/login")
         }

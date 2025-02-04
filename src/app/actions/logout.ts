@@ -6,4 +6,7 @@ export async function logOut() {
 
     cookieStore.delete('token')
 
+    return
+
+
 }

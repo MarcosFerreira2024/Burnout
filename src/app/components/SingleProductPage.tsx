@@ -38,6 +38,7 @@ function SingleProductPage({id}:{id:string}) {
 
             async function getProdutos(id:string) {
                 const produtos = await getOneProduct(id)
+                if(produtos instanceof Error) return
                 setProdutos(produtos)
 
             }
