@@ -5,6 +5,7 @@ export interface ComponenteProduto {
     price: string,
     id: string,
     fav: boolean
+    url: string
 }
 
 export interface Product {
