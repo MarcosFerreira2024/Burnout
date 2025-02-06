@@ -60,9 +60,6 @@ export async function getUser() {
 export const updateUser = async (url: string) => {
 
 
-    const newPhotoUrl = url.replace("http", "https")
-
-
     try {
         const token = (await cookies()).get("token")
 
@@ -75,7 +72,7 @@ export const updateUser = async (url: string) => {
                 "Authorization": `Bearer ${token.value}`
             },
             body: JSON.stringify({
-                photo: newPhotoUrl
+                photo: url
             })
         })
 
