@@ -35,7 +35,7 @@ function ModalPesquisa() {
                 <Link className='outline-red-600' onClick={()=>{
                   setModais(false)
                   showModalPesquisa(false)
-                }} href={`/home/${item}`}  >
+                }} href={`/home/${item}/1`}  >
                   <p   className='group-hover:text-gray-300   duration-300 ease-in-out transition-all text-placeholder font-poppins text-secundaryTitle '>{item}</p> 
                 </Link>
                   <button onClick={handleDeleteSearch} className='outline-red-600'><X  width={16} height={16} className='text-white z-10 group-hover:text-gray-300 cursor-pointer hover:rotate-[25deg] duration-300 ease-out'/></button> 
