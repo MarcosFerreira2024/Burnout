@@ -12,7 +12,9 @@ import { mutate } from 'swr'
 import ACTIONS from '../consts/Urls'
 
 
-function Produtos({id,fav,photo,category,name,price,}:ComponenteProduto) {
+function Produtos({id,url,fav,photo,category,name,price,}:ComponenteProduto) {
+
+  console.log(url)
 
   const {user} = useContext(UserContext)
 
@@ -31,13 +33,13 @@ function Produtos({id,fav,photo,category,name,price,}:ComponenteProduto) {
     const parcelas = (parseInt(price.split("R$")[1].split(",")[0])/7).toFixed(2).replace(".",",")
   return (
     <article onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)} className='flex flex-col font-poppins w-full max-w-[400px]   '>
-        <Link href={`/home/${category[0]}/${id}`} className='focus-visible:outline-red-600 '>
+        <Link href={`${url}/${id}`} className='focus-visible:outline-red-600 '>
         <div className='relative  '>
                 {hover && photo.length>1 ?<Image src={photo[1]} width={348}  height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />:<Image src={photo[0]} width={348}  height={350} className='min-w-full border-[2px]  border-mainStroke rounded-md object-cover h-full min-h-[400px] max-h-[400px]' alt={name} title={name} />}
                 <div onClick={(e)=> {
                   e.preventDefault()
                 }} className='absolute top-[10px] right-[10px]'><FavButton favorito={fav}/></div>
-                {user.role==="ADMIN"?<>
+                {user && user.role==="ADMIN"?<>
                   <button onClick={(e) => 
                   {
                     e.preventDefault()
