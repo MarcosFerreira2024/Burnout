@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import { getCart } from "../../actions/cart";
 import { getUser } from "../../actions/user";
 import NavBar from "../../components/NavBar";
@@ -14,6 +15,8 @@ export default async function RootLayout({
 }>) {
   
   const data = await getUser();
+
+  if(data instanceof Error && !data) redirect("/login")
 
 
   const dataCart = await getCart()
