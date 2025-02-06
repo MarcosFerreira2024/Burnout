@@ -1,36 +1,50 @@
+
+import { Product } from "../actions/cart"
 import ACTIONS from "../consts/Urls"
-import { Product } from "../Types/Interfaces/Produtos"
 
-export const getAllProducts = async ([url, category]) => {
+
+export type InfoProducts = {
+    produtos: Product[],
+    totalPages: number,
+    totalProducts: number
+
+}
+
+export const getAllProducts = async ([url, category, page]) => {
+
+    console.log(`${url}${category}&page=${page as number}`)
 
     try {
-        const response = await fetch(`${url}${category}`)
+        const response = await fetch(`${url}${category}&page=${page as number}`)
         const json = await response.json()
 
         if (response.status !== 200) throw new Error
 
 
-        return json as Product[]
+        console.log(json)
+        return json as InfoProducts
+
     }
     catch (e) {
         console.log(e)
     }
 }
 
-export const getAllProductsAdmin = async (url: string) => {
+export const getAllProductsAdmin = async ([url, page]) => {
     try {
-        const response = await fetch(`${url}`)
+        const response = await fetch(`${url}&page=${page as number}`)
         const json = await response.json()
 
         if (response.status !== 200) throw new Error
 
-
-        return json as Product[]
+        console.log(json)
+        return json as InfoProducts
     }
     catch (e) {
         console.log(e)
     }
 }
+
 
 
 
@@ -41,7 +55,6 @@ export const getOneProduct = async (id: string) => {
         const json = await response.json()
 
         if (response.status !== 200) return new Error("Produto nao encontrado")
-
 
         return json as Product
     }
