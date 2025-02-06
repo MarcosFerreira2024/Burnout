@@ -50,6 +50,10 @@ const ACTIONS = {
         deleteOne: {
             url: `${HOST}produto/:id`,
             productId: (id: string) => `${HOST}produto/${id}`
+        },
+        updateOne: {
+            url: `${HOST}produto/:id`,
+            productId: (id: string) => `${HOST}produto/${id}`
         }
 
     },
