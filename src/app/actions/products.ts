@@ -69,3 +69,41 @@ export const createProduct = async (data: CreateProduct) => {
     }
 }
 
+type UpdateProductInput = {
+    name?: string,
+    colorName?: string,
+    colorHex?: string,
+    frete?: string,
+    price?: string,
+    size?: string[],
+    category?: string[],
+    photo?: (string | {
+        url: string;
+        public_id: string;
+    })[]
+}
+
+export const updateProduct = async (data: UpdateProductInput, id: string) => {
+    try {
+        const token = (await cookies()).get("token")
+        const response = await fetch(`${ACTIONS.produtos.updateOne.productId(id)}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token.value}`
+            },
+            body: JSON.stringify(data)
+        })
+        const json = await response.json()
+        if (json instanceof Error) throw new Error(json.message)
+
+        console.log(json, response.status)
+
+        if (response.ok) return json
+
+    } catch (e) {
+
+        console.log(e)
+
+    }
+}   

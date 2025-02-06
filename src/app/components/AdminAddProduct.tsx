@@ -11,8 +11,8 @@ import Preview from './Preview';
 
 function AdminAddProduct() {
   const [selectedSizes, setSelectedSizes] = useState<string[]>(["PP","P","M","G","GG"]);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(["","","Sem Promoção"]);
-  const [selectedPhotos, setSelectedPhotos] = useState<File[]>([  ]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(["","Todos","Sem"]);
+  const [selectedPhotos, setSelectedPhotos] = useState<File[]>([]);
   
   
   const [ error , setError ] = useState<string>("")
@@ -124,16 +124,9 @@ function AdminAddProduct() {
       await deleteFromCloud(url3.public_id)
       return
     }
+    window.alert("Produto Criado Com Sucesso")
 
-    setPrice('');
-    setName('');
-    setColorName('');
-    setColorHex('');
-    setFrete('');
-    setError(''); 
-    setSelectedSizes([]);
-    setSelectedCategories([]);
-    setSelectedPhotos([]);
+    window.location.reload()
 
     
 

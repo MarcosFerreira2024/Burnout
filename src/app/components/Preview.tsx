@@ -14,15 +14,22 @@ type PreviewData = {
     price: string,
     size: string[],
     category: string[],
-    photo: File[]
+    photo: File[] | string[],
 }
 
 function Preview({dados}:{dados:PreviewData}) {
 
 
-    const photo1 = dados.photo.length === 3 ? URL.createObjectURL(dados.photo[0]):"/home/not-available.png"
-    const photo2 = dados.photo.length === 3 ? URL.createObjectURL(dados.photo[1]):"/home/not-available.png"
-    const photo3 = dados.photo.length === 3 ? URL.createObjectURL(dados.photo[2]):"/home/not-available.png"
+    const getPhotoUrl = (photo: File | string ): string => {
+        if (!photo) {
+          return "/home/not-available.png"; 
+        }
+        return typeof photo === "string" ? photo : URL.createObjectURL(photo);
+      };
+      
+      const photo1 = getPhotoUrl(dados.photo[0]);
+      const photo2 = getPhotoUrl(dados.photo[1]);
+      const photo3 = getPhotoUrl(dados.photo[2]);
 
     const photoArray = [photo1,photo2,photo3]
 
