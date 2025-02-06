@@ -135,7 +135,7 @@ export const NavContextProvider = ({ children }: ContextProviderProps) => {
               setPesquisas(updated.split(" "))
               
             }
-            redirect(`/home/${searchValue}`)
+            redirect(`/home/${searchValue}/1`)
           }
           
 
