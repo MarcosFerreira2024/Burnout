@@ -60,7 +60,7 @@ function CategoriesPage({category}:{category:string}) {
                 
             
             </header>
-            <section className='mt-[40px] '>
+            <section className='mt-[40px] min-h-[500px] '>
                 <ul className='lg:grid flex flex-wrap justify-center  lg:grid-cols-3 xl:grid-cols-4 gap-4'>
                     {data.produtos.map((produto)=>(
                         <li className='' key={produto.id}><Produtos url={path} fav={produto.favorito} name={produto.name}  id={produto.id} category={produto.category} photo={produto.photo} price={produto.price}  /></li>
@@ -75,6 +75,7 @@ function CategoriesPage({category}:{category:string}) {
 
 
             <Footer/>
+        </section>:null}
 
         
         
@@ -83,7 +84,6 @@ function CategoriesPage({category}:{category:string}) {
         
         
         
-        </section>:null}
 
     </>
   )
