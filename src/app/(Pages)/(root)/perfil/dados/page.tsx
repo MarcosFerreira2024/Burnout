@@ -13,7 +13,7 @@ function page() {
       <Enderecos />
       <div className='flex-1 grid grid-cols-1 max-w-[1440px] gap-5 md:gap-10 px-5   mx-auto '>
           <HeaderPerfil version={2} alterarDados={true}/>
-          <div className='grid grid-cols-2 gap-5'>
+          <div className='grid sm:grid-cols-2 gap-5'>
 
           <AlterarDados />
 

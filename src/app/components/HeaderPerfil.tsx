@@ -26,7 +26,7 @@ function HeaderPerfil({alterarDados=false,version=1}:{alterarDados?:boolean,vers
   return (
     <div className=" w-[100%]  sm:mt-5">
 
-        <div className={`w-full py-5   px-5 items-center ${version===1?"bg-mainBg border-2 border-mainStroke":"bg-secundaryBg border-2 border-[#eeeeee] hover:bg-mainBg group/header transition-all ease-in-out duration-300"} rounded-md  flex globalShadow`}>
+        <div className={`w-full sm:py-5  p-2 sm:p-0 sm:px-5 items-center ${version===1?"bg-mainBg border-2 border-mainStroke":"bg-secundaryBg border-2 border-[#eeeeee] hover:bg-mainBg group/header transition-all ease-in-out duration-300"} rounded-md  flex globalShadow`}>
             <div className={`flex  justify-between items-center w-full ${version===1?"text-secundaryTitle":"text-mainTitle group-hover/header:text-secundaryTitle"} font-poppins`}>
                 <div className='flex gap-2'>
                     <div className='relative group/image  max-h-[80px] max-w-[80px] min-h-[80px] min-w-[80px] md:max-h-[98px] md:max-w-[98px] md:min-h-[98px] md:min-w-[98px]'>
@@ -57,9 +57,7 @@ function HeaderPerfil({alterarDados=false,version=1}:{alterarDados?:boolean,vers
 
                 
             </div>
-            <div>
-                
-            </div>
+
 
         </div>
 
