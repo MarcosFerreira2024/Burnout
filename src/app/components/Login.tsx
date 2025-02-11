@@ -9,6 +9,7 @@ import { LoginContext } from '../Contexts/LoginContext'
 import { FormButton } from './FormButton'
 import ActivationModal from './ActivationModal'
 import { redirect } from 'next/navigation'
+import { getUser } from '../actions/user'
 
 
 
@@ -20,6 +21,8 @@ import { redirect } from 'next/navigation'
 function Login() {
 
   const inputRef = useRef(null)
+
+
 
   const [state,action] = useActionState(login, {
     ok: false,
@@ -33,6 +36,13 @@ function Login() {
 
 
   useEffect(()=>{
+
+    async function checkUser() {
+      const user = await getUser()
+      if(user instanceof Error) return
+      if(user.status === true) redirect("/home")
+    }
+    checkUser()
     
     if(submit === true){
       if(state.error &&state.error.includes("Verifique")){

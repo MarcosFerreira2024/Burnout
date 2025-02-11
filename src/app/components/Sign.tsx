@@ -8,6 +8,7 @@ import Message from './Message'
 import { FormButton } from './FormButton'
 import { LoginContext } from '../Contexts/LoginContext'
 import { redirect } from 'next/navigation'
+import { getUser } from '../actions/user'
 
 
 function Sign() {
@@ -32,6 +33,12 @@ function Sign() {
           setShowActivationModal(true)
           redirect("/login")
         }
+            async function checkUser() {
+              const user = await getUser()
+              if(user instanceof Error) return
+              if(user.status === true) redirect("/home")
+            }
+            checkUser()
     
 
     },[state.ok,state.name,setShowActivationModal,state.error])
