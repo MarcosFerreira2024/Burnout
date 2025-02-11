@@ -1,5 +1,5 @@
 <div>
-  <a href="https://github.com/MarcosFerreira2024/Burnout-back-end/blob/main/README.md"> Documentação do Projeto </a>
+  <a href="https://github.com/MarcosFerreira2024/Burnout-back-end/blob/main/README.md">Documentação do Projeto</a>
   <a href="#pc" >Fotos do Projeto no PC</a>
   <a href="#mobile" >Fotos do Projeto no Mobile</a>
   
@@ -26,11 +26,14 @@
 ![image](https://github.com/user-attachments/assets/6d069c40-360d-4430-a41d-44b0eee3d961)
 ![image](https://github.com/user-attachments/assets/26d1c2fd-202e-40fd-9822-f16556e6202a)
 
+</div>
 
+<div id="mobile">
 
-
-
-
+![image](https://github.com/user-attachments/assets/67727c4d-25bf-4675-aaae-c929bafe875d)
+![image](https://github.com/user-attachments/assets/d359c831-477c-4209-940c-fb8b9a3be654)
+![image](https://github.com/user-attachments/assets/471356be-564b-487b-a2a7-761779d4ab5c)
+![image](https://github.com/user-attachments/assets/691dee4f-6a9f-4c25-b06f-80b3ecdab049)
 
 
 
