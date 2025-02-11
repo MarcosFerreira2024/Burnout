@@ -17,6 +17,8 @@ type Context = {
     setDataCart: React.Dispatch<React.SetStateAction<Cart[]>>
     modalPicture : boolean
     setModalPicture: React.Dispatch<React.SetStateAction<boolean>>
+    setShowEnderecos: React.Dispatch<React.SetStateAction<boolean>>
+    showEnderecos: boolean
 
 }
 
@@ -30,13 +32,15 @@ export const UserContextProvider = ({ children, user, cart  }: ContextProviderPr
 
     const [dataCart, setDataCart] = useState<Cart[] | null>(cart)
 
+    const [showEnderecos, setShowEnderecos] = useState(false)
+
     
 
     
 
     return (
         <UserContext.Provider
-            value={{user: data ,modalPicture,setModalPicture, setUser, cart: dataCart , setDataCart}  }
+            value={{user: data ,showEnderecos, setShowEnderecos,modalPicture,setModalPicture, setUser, cart: dataCart , setDataCart}  }
         >
             {children}
         </UserContext.Provider>
