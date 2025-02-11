@@ -2,46 +2,46 @@ export const Departamentos = [
 
     {
         name: "Acessórios",
-        ref: "/home/acessório",
+        ref: "/home/acessórios/1",
 
     },
     {
         name: "Calçados",
-        ref: "/home/calçado",
+        ref: "/home/calçados/1",
 
     },
     {
         name: "Moda Íntima",
-        ref: "/home/calcinha",
+        ref: "/home/calcinhas/1",
 
     },
     {
         name: "Bolsas",
-        ref: "/home/bolsa"
+        ref: "/home/bolsas/1"
     },
     {
         name: "Maquiagem",
-        ref: "/home/maquiagem"
+        ref: "/home/maquiagem/1"
     },
     {
         name: "Perfumes",
-        ref: "/home/perfume"
+        ref: "/home/perfumes/1"
     },
     {
         name: "Vestidos",
-        ref: "/home/vestido"
+        ref: "/home/vestidos/1"
     },
     {
         name: "Blusas",
-        ref: "/home/blusa"
+        ref: "/home/blusas/1"
     },
     {
         name: "Saias",
-        ref: "/home/saia"
+        ref: "/home/saias/1"
     },
     {
         name: "Calças",
-        ref: "/home/calca"
+        ref: "/home/calcas/1"
     }
 ]
 

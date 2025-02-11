@@ -3,43 +3,43 @@ import { Roupa } from "../components/Roupas";
 
 export const HomeMainCategories: HomeCategories[] = [
     {
-        ref: "/home/sandalia",
+        ref: "/home/sandalias/1",
         text: "Sandálias"
     },
     {
-        ref: "/home/blusa",
+        ref: "/home/blusas/1",
         text: "Blusas"
     },
     {
-        ref: "/home/vestido",
+        ref: "/home/vestidos/1",
         text: "Vestidos"
     },
     {
-        ref: "/home/calca",
+        ref: "/home/calças/1",
         text: "Calças"
     },
     {
-        ref: "/home/bermuda",
+        ref: "/home/bermudas/1",
         text: "Bermudas"
     },
     {
-        ref: "/home/calcinha",
+        ref: "/home/calcinhas/1",
         text: "Calcinhas"
     },
     {
-        ref: "/home/oculo",
+        ref: "/home/óculos/1",
         text: "Óculos"
     },
     {
-        ref: "/home/bracelete",
+        ref: "/home/braceletes/1",
         text: "Braceletes"
     },
     {
-        ref: "/home/chapeu",
+        ref: "/home/chapéus/1",
         text: "Chapéus"
     },
     {
-        ref: "/home/sutia",
+        ref: "/home/sutiãs/1",
         text: "Sutiãs"
     }
 ]
@@ -47,17 +47,17 @@ export const HomeMainCategories: HomeCategories[] = [
 export const DataRoupas: Roupa[] = [
     {
         photo: "/home/camiseta.webp",
-        redirect: "/home/Camisetas/67901b65e9eb6a9f1a871987",
+        redirect: "/home/Camisetas/1/67901b65e9eb6a9f1a871987",
         title: 'Camiseta em Algodão com Morangos Estampados Off White'
     },
     {
         photo: "/home/blusa.webp",
-        redirect: "/home/Blusas/67901b2be9eb6a9f1a871986",
+        redirect: "/home/Blusas/1/67901b2be9eb6a9f1a871986",
         title: 'Blusa Peplum em Tricoline com Lacinhos Frontais Amarelo'
     },
     {
         photo: "/home/vestido.webp",
-        redirect: "/home/Blusas/67901c30e9eb6a9f1a871988",
+        redirect: "/home/Blusas/1/67901c30e9eb6a9f1a871988",
         title: 'Blusa Cropped Franzida em Tricoline com Lastex Verde'
     }
 
