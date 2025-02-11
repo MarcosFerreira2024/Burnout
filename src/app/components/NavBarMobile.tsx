@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import NavButton from './NavButtons'
 import { NavContext } from '../Contexts/navBarContext'
 import InputPesquisa from './InputPesquisa'
@@ -13,10 +13,9 @@ import { UserContext } from '../Contexts/UserContext'
 function NavBarMobile() {
   const {handleSearch,handleModalCategorias,handleLogout} = useContext(NavContext)
 
-
   let lastScrollTop = 0;
-
-  window.addEventListener('scroll', () => {
+  
+  const handleScroll = () =>{
     const element = document.querySelectorAll('.header')
 
     if(lastScrollTop < document.documentElement.scrollTop){
@@ -31,7 +30,15 @@ function NavBarMobile() {
     const scrollTop = document.documentElement.scrollTop
     lastScrollTop = scrollTop
 
-  });
+
+  }
+
+  useEffect(()=>{
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  })
 
   const {user} = useContext(UserContext)
   return (
