@@ -101,7 +101,7 @@ function CartItems() {
             onMouseMove={handleDragging}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
-            className='flex flex-col scrollable-content mt-10 font-poppins gap-10 px-1 pb-1'
+            className='flex flex-col scrollable-content sm:mt-10 mt-0 font-poppins gap-10 px-1 pb-1'
         >
            { cart && cart.length >= 1 ? 
                 cart.map((item, index) => (
