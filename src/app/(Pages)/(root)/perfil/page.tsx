@@ -8,9 +8,9 @@ function page() {
   return (
     <>
     <ModalPicture />
-    <div className='flex-1 grid mx-auto mt-20 sm:mt-0 px-5  '>
+    <div className='flex-1 grid mx-auto max-w-[1440px]  mt-20 sm:mt-0 px-5  '>
 
-      <HeaderPerfil />
+      <HeaderPerfil version={1} />
       <OptionsPerfil />
       <Footer/>
 

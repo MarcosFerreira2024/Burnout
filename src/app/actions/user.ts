@@ -11,6 +11,11 @@ export type User = {
     role: string,
     status: boolean,
     email: string,
+    phone: string | null,
+    birthDate: string | null,
+    enderecos: string[] | null,
+    cpf: string | null,
+    pedidos: [],
     carrinho: {
         id: string,
         userId: string,

@@ -121,7 +121,7 @@ function CartItems() {
                                     ref={refFoto}
                                     onMouseEnter={handleHoverFoto}
                                     onMouseLeave={handleOutFoto}
-                                    onClick={() => route.push(`/home/produto/${item.product.id}`)}
+                                    onClick={() => route.push(`/home/produto/fromCart/${item.product.id}`)}
                                     width={150}
                                     height={150}
                                     src={

@@ -7,10 +7,13 @@ import { NavContext } from '../Contexts/navBarContext'
 import InputPesquisa from './InputPesquisa'
 import { NavDataMobile } from '../data/NavData'
 import ModalCategories from './ModalCategories'
+import { UserContext } from '../Contexts/UserContext'
 
 
 function NavBarMobile() {
   const {handleSearch,handleModalCategorias,handleLogout} = useContext(NavContext)
+
+  const {user} = useContext(UserContext)
   return (
     <>      
         <ModalCategories />
@@ -21,7 +24,7 @@ function NavBarMobile() {
             </form>
 
             <div className='min-w-[32px]'>
-                <NavButton href='/perfil' alt='perfil' label='perfil' src='/ui/perfil.png' perfil />
+                <NavButton href='/perfil' alt='perfil' label='perfil' src={user?(user.photo?user.photo:"/ui/perfil.png"):"/ui/perfil.png"} perfil />
             </div>
         </aside>
         <main className=' z-[999] globalShadow   fixed bottom-0 w-[100%] bg-mainBg     '>
