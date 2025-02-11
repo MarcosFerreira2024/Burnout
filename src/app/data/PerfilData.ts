@@ -15,7 +15,7 @@ export const Options = [
     {
         title: "Dados",
         subtitle: "Veja ou altere seus dados",
-        redirect: false,
+        redirect: "/perfil/dados",
         icon: "User",
     },
     {
