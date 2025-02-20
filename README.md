@@ -1,4 +1,13 @@
 <div>
+  <h1>Devido ao backend estar hospedado na vercel e ao cold-start da mesma, o site apresenta lentidão, caso queira realmente testar o site, é recomendado o download do repositório do front end e do backend e a configuração das variáveis de ambiente.</h1>
+  
+
+  
+</div>
+
+
+
+<div>
   <a href="https://github.com/MarcosFerreira2024/Burnout-back-end/blob/main/README.md">Documentação do Projeto</a>
   <a href="#pc" >Fotos do Projeto no PC</a>
   <a href="#mobile" >Fotos do Projeto no Mobile</a>
